@@ -3,7 +3,5 @@
 </template>
 
 <script>
-export default {
-  name: 'NuxtH1',
-}
+export default {}
 </script>

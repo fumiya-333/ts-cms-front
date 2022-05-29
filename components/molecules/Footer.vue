@@ -8,6 +8,6 @@
 
 <script>
 export default {
-    name: "NuxtFooter"
+  name: "NuxtFooter"
 }
 </script>

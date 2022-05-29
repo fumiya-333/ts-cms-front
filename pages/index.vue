@@ -1,16 +1,16 @@
 <template>
-  <LoginTemplate>
+  <UserTemplate>
     <Login></Login>
-  </LoginTemplate>
+  </UserTemplate>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import LoginTemplate from '@/components/templates/LoginTemplate.vue';
-import Login from '@/components/organisms/Login.vue';
+import UserTemplate from '@/components/templates/UserTemplate.vue'
+import Login from '@/components/organisms/users/Login.vue'
 
 export default Vue.extend({
     name: "IndexPage",
-    components: { LoginTemplate, Login }
+    components: { UserTemplate, Login }
 })
 </script>

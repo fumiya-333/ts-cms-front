@@ -1,0 +1,11 @@
+.p-create {
+  padding: 128px 0;
+  &__inner {
+    width: 700px;
+    margin: 0 auto;
+    @include mq(sp){
+      width: 100%;
+      padding: 0 16px;
+    }
+  }
+}
