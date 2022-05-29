@@ -1,7 +1,13 @@
 <template>
-  <h1><a href="/">TS-CMS</a></h1>
+  <h1><a href="/">{{ title }} </a></h1>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      title: this.$getTitle()
+    }
+  }
+}
 </script>

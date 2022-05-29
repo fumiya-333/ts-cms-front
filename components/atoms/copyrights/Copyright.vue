@@ -1,9 +1,16 @@
 <template>
   <div class="c-copyright m-fadein">
-    © 2022 TS-CMS.
+    © {{ year }} {{ title }}.
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      year: this.$getYear(),
+      title: this.$getTitle()
+    }
+  }
+}
 </script>
