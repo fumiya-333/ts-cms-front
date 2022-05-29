@@ -1,4 +1,4 @@
-.p-login {
+.p-users {
   padding: 128px 0;
   &__inner {
     width: 700px;
@@ -25,6 +25,10 @@
           }
           &-btn-create {
             margin-top: 16px;
+          }
+          &-btn-password-reset-pre {
+            text-align: center;
+            margin: 0 auto;
           }
         }
         &__password-reset-link {

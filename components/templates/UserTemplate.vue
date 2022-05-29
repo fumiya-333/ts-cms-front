@@ -24,7 +24,6 @@ import BaseH1 from '@/components/atoms/headings/BaseH1.vue'
 import BaseCopyright from '@/components/atoms/copyrights/BaseCopyright.vue'
 
 export default {
-    name: "NuxtLoginTemplate",
     components: { Header, Footer, Wrapper, Contents, Main, BaseH1, BaseCopyright }
 }
 </script>

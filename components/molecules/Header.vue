@@ -7,7 +7,5 @@
 </template>
 
 <script>
-export default {
-  name: 'NuxtHeader',
-}
+export default {}
 </script>

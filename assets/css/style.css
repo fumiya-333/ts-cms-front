@@ -390,108 +390,44 @@ th {
   line-height: 2;
 }
 
-.p-create-pre {
+.p-users {
   padding: 128px 0;
 }
-.p-create-pre__inner {
+.p-users__inner {
   width: 700px;
   margin: 0 auto;
 }
 @media screen and (max-width: 767px) {
-  .p-create-pre__inner {
+  .p-users__inner {
     width: 100%;
     padding: 0 16px;
   }
 }
-.p-create-pre__inner__form__inner label {
+.p-users__inner__form__inner label {
   padding: 42px 0 14px 0;
 }
-.p-create-pre__inner__form__inner label:first-child {
+.p-users__inner__form__inner label:first-child {
   padding: 0 0 14px 0;
 }
-.p-create-pre__inner__form__inner__btn-area {
+.p-users__inner__form__inner__btn-area {
   margin-top: 84px;
 }
-.p-create-pre__inner__form__inner__btn-area-btn-create {
-  text-align: center;
+.p-users__inner__form__inner__btn-area-btn-login, .p-users__inner__form__inner__btn-area-btn-create {
   margin: 0 auto;
 }
-
-.p-create {
-  padding: 128px 0;
-}
-.p-create__inner {
-  width: 700px;
-  margin: 0 auto;
-}
-@media screen and (max-width: 767px) {
-  .p-create__inner {
-    width: 100%;
-    padding: 0 16px;
-  }
-}
-
-.p-login {
-  padding: 128px 0;
-}
-.p-login__inner {
-  width: 700px;
-  margin: 0 auto;
-}
-@media screen and (max-width: 767px) {
-  .p-login__inner {
-    width: 100%;
-    padding: 0 16px;
-  }
-}
-.p-login__inner__form__inner label {
-  padding: 42px 0 14px 0;
-}
-.p-login__inner__form__inner label:first-child {
-  padding: 0 0 14px 0;
-}
-.p-login__inner__form__inner__btn-area {
-  margin-top: 84px;
-}
-.p-login__inner__form__inner__btn-area-btn-login, .p-login__inner__form__inner__btn-area-btn-create {
-  margin: 0 auto;
-}
-.p-login__inner__form__inner__btn-area-btn-login {
+.p-users__inner__form__inner__btn-area-btn-login {
   text-align: center;
 }
-.p-login__inner__form__inner__btn-area-btn-create {
+.p-users__inner__form__inner__btn-area-btn-create {
   margin-top: 16px;
 }
-.p-login__inner__form__inner__password-reset-link {
-  margin-top: 24px;
-  font-size: 14px;
-}
-
-.p-password-reset-pre {
-  padding: 128px 0;
-}
-.p-password-reset-pre__inner {
-  width: 700px;
-  margin: 0 auto;
-}
-@media screen and (max-width: 767px) {
-  .p-password-reset-pre__inner {
-    width: 100%;
-    padding: 0 16px;
-  }
-}
-.p-password-reset-pre__inner__form__inner label {
-  padding: 42px 0 14px 0;
-}
-.p-password-reset-pre__inner__form__inner label:first-child {
-  padding: 0 0 14px 0;
-}
-.p-password-reset-pre__inner__form__inner__btn-area {
-  margin-top: 84px;
-}
-.p-password-reset-pre__inner__form__inner__btn-area-btn-password-reset-pre {
+.p-users__inner__form__inner__btn-area-btn-password-reset-pre {
   text-align: center;
   margin: 0 auto;
+}
+.p-users__inner__form__inner__password-reset-link {
+  margin-top: 24px;
+  font-size: 14px;
 }
 
 .u-flex-end {
