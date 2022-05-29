@@ -1,11 +1,14 @@
 <template>
   <header class="l-header m-fadein">
     <div class="l-header__inner">
-      <slot></slot>
+      <BaseH1></BaseH1>
     </div>
   </header>
 </template>
 
 <script>
-export default {}
+import BaseH1 from '@/components/atoms/headings/BaseH1'
+export default {
+  components: { BaseH1 }
+}
 </script>

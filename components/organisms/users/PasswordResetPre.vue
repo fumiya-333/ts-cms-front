@@ -1,11 +1,7 @@
 <template>
   <User>
-    <FormLabel>氏名</FormLabel>
-    <PlaneText></PlaneText>
     <FormLabel>メールアドレス</FormLabel>
     <EmailText placeholder="example@example.com"></EmailText>
-    <FormLabel>パスワード</FormLabel>
-    <PasswordText></PasswordText>
     <div class="p-users__inner__form__inner__btn-area">
       <CreateLinkBtn create-btn-class="p-users__inner__form__inner__btn-area-btn-create"></CreateLinkBtn>
     </div>
@@ -17,10 +13,8 @@ import User from '@/components/organisms/users/User'
 import FormLabel from '@/components/atoms/labels/BaseLabel'
 import EmailText from '@/components/atoms/texts/EmailText'
 import CreateLinkBtn from '@/components/molecules/btns/CreateLinkBtn'
-import PasswordText from '@/components/atoms/texts/PasswordText'
-import PlaneText from '@/components/atoms/texts/PlaneText'
 
 export default {
-  components: { User, FormLabel, EmailText, CreateLinkBtn, PasswordText, PlaneText }
+  components: { User, FormLabel, EmailText, CreateLinkBtn }
 }
 </script>

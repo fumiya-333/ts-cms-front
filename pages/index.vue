@@ -1,6 +1,6 @@
 <template>
   <UserTemplate>
-    <Login></Login>
+    <Login/>
   </UserTemplate>
 </template>
 
