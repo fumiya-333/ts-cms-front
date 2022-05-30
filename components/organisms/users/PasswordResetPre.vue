@@ -1,6 +1,6 @@
 <template>
   <User>
-    <FormLabel>メールアドレス</FormLabel>
+    <FormLabel>{{ $t('form.email') }}</FormLabel>
     <EmailText placeholder="example@example.com"></EmailText>
     <div class="p-users__inner__form__inner__btn-area">
       <CreateLinkBtn create-btn-class="p-users__inner__form__inner__btn-area-btn-create"></CreateLinkBtn>

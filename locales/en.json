@@ -1,0 +1,8 @@
+{
+  "title": "TS-CMS",
+  "form": {
+    "name" : "name",
+    "email" : "email",
+    "password" : "password"
+  }
+}

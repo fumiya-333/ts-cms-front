@@ -1,8 +1,8 @@
 <template>
   <User>
-    <FormLabel>メールアドレス</FormLabel>
+    <FormLabel>{{ $t('form.email') }}</FormLabel>
     <EmailText placeholder="example@example.com"/>
-    <FormLabel>パスワード</FormLabel>
+    <FormLabel>{{ $t('form.password') }}</FormLabel>
     <PasswordText/>
     <Link href="password-reset-pre" href-class="u-flex-end p-users__inner__form__inner__password-reset-link">パスワードを忘れた</Link>
     <div class="p-users__inner__form__inner__btn-area">

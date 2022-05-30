@@ -1,10 +1,10 @@
 <template>
   <User>
-    <FormLabel>氏名</FormLabel>
+    <FormLabel>{{ $t('form.name') }}</FormLabel>
     <PlaneText></PlaneText>
-    <FormLabel>メールアドレス</FormLabel>
+    <FormLabel>{{ $t('form.email') }}</FormLabel>
     <EmailText placeholder="example@example.com"></EmailText>
-    <FormLabel>パスワード</FormLabel>
+    <FormLabel>{{ $t('form.password') }}</FormLabel>
     <PasswordText></PasswordText>
     <div class="p-users__inner__form__inner__btn-area">
       <CreateLinkBtn create-btn-class="p-users__inner__form__inner__btn-area-btn-create"></CreateLinkBtn>

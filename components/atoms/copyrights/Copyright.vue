@@ -1,6 +1,6 @@
 <template>
   <div class="c-copyright m-fadein">
-    © {{ year }} {{ title }}.
+    © {{ year }} {{ $t('title') }}.
   </div>
 </template>
 
@@ -8,8 +8,7 @@
 export default {
   data() {
     return {
-      year: this.$getYear(),
-      title: this.$getTitle()
+      year: this.$getYear()
     }
   }
 }

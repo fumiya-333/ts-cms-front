@@ -21,8 +21,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/libs/DateUtil',
-    '@/libs/CommonUtil'
+    '@/libs/DateUtil'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -34,7 +33,31 @@ export default {
     '@nuxt/typescript-build',
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
+  modules: [
+    // // Doc: https://axios.nuxtjs.org/usage
+    // '@nuxtjs/axios',
+    // // Doc: https://github.com/nuxt-community/dotenv-module
+    // '@nuxtjs/dotenv',
+    [
+      'nuxt-i18n',
+      {
+        // 使用する言語の設定
+        locales: [
+          { code: 'ja', name: 'Japanese', iso: 'ja_JP', file: 'ja.json' },
+          { code: 'en', name: 'English', iso: 'en-US', file: 'en.json' }
+        ],
+        defaultLocale: 'ja', // デフォルトの言語
+        langDir: 'locales/', // 翻訳ファイルのディレクトリパス
+        strategy: 'prefix_and_default', // URLに言語のプレフィックスを追加するかの指定
+        vueI18n: {
+          // 翻訳ファイルが見つからなかった場合の言語を指定
+          fallbackLocale: 'ja'
+        },
+        vueI18nLoader: true,
+        lazy: true // 遅延読み込みの有効化
+      }
+    ]
+  ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
 }
