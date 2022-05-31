@@ -18,6 +18,6 @@ import Contents from '@/components/organisms/Contents'
 import Main from '@/components/organisms/Main'
 
 export default {
-    components: { Header, Footer, Wrapper, Contents, Main }
+  components: { Header, Footer, Wrapper, Contents, Main }
 }
 </script>

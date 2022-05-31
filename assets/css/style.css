@@ -358,7 +358,7 @@ th {
   color: #FFF;
 }
 
-.c-btn-create, .c-btn-password-reset-pre {
+.c-btn-create-pre, .c-btn-password-reset-pre {
   background-color: #F5A623;
   border: 0.5px solid #F5A623;
   color: #FFF;
@@ -412,18 +412,12 @@ th {
 .p-users__inner__form__inner__btn-area {
   margin-top: 84px;
 }
-.p-users__inner__form__inner__btn-area-btn-login, .p-users__inner__form__inner__btn-area-btn-create {
+.p-users__inner__form__inner__btn-area-btn-login, .p-users__inner__form__inner__btn-area-btn-create-pre, .p-users__inner__form__inner__btn-area-btn-password-reset-pre {
   margin: 0 auto;
-}
-.p-users__inner__form__inner__btn-area-btn-login {
   text-align: center;
 }
-.p-users__inner__form__inner__btn-area-btn-create {
+.p-users__inner__form__inner__btn-area-btn-create-pre {
   margin-top: 16px;
-}
-.p-users__inner__form__inner__btn-area-btn-password-reset-pre {
-  text-align: center;
-  margin: 0 auto;
 }
 .p-users__inner__form__inner__password-reset-link {
   margin-top: 24px;

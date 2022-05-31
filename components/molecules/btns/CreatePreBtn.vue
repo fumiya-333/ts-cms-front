@@ -1,5 +1,5 @@
 <template>
-  <Btn name="login" btn-class="c-btn-login" :class="loginBtnClass" @click="$emit('click')">ログイン</Btn>
+  <Btn name="create-pre" btn-class="c-btn-create-pre" :class="createPreBtnClass" @click="$emit('click')">新規登録</Btn>
 </template>
 
 <script>
@@ -8,7 +8,7 @@ import Btn from '@/components/atoms/btns/Btn'
 export default {
   components: { Btn },
   props: {
-    loginBtnClass: {
+    createPreBtnClass: {
       type: String,
       default: "",
     },

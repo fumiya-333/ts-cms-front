@@ -1,5 +1,5 @@
 <template>
-  <input type="password" name="password" class="c-input" :class="passwordClass" :value="value">
+  <input type="password" name="password" class="c-input" :class="passwordClass" :value="value" @input="$emit('input', $event.target.value)">
 </template>
 
 <script>

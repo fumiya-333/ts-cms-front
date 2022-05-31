@@ -11,6 +11,6 @@ import Login from '@/components/organisms/users/Login.vue'
 
 export default Vue.extend({
     name: "IndexPage",
-    components: { UserTemplate, Login }
+    components: { UserTemplate, Login },
 })
 </script>
