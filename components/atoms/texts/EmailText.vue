@@ -1,5 +1,7 @@
 <template>
-  <input type="email" name="email" class="c-input" :class="emailTextClass" :value="value" @input="$emit('input', $event.target.value)">
+  <input
+type="email" name="email" class="c-input" :class="emailTextClass" :value="value"
+    @input="$emit('input', $event.target.value)">
 </template>
 
 <script>
