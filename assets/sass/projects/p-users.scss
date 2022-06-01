@@ -1,4 +1,4 @@
-.p-login {
+.p-users {
   padding: 128px 0;
   &__inner {
     width: 700px;
@@ -17,13 +17,11 @@
         }
         &__btn-area {
           margin-top: 84px;
-          &-btn-login, &-btn-create {
+          &-btn-login, &-btn-create-pre, &-btn-password-reset-pre {
             margin: 0 auto;
-          }
-          &-btn-login {
             text-align: center;
           }
-          &-btn-create {
+          &-btn-create-pre {
             margin-top: 16px;
           }
         }

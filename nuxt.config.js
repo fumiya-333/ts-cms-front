@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'ts-cms-front',
+    title: 'TS-CMS',
     htmlAttrs: {
       lang: 'en',
     },
@@ -20,7 +20,11 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    '@/libs/date-util',
+    '@/libs/api-util',
+    '@/libs/vuelidate',
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -31,7 +35,29 @@ export default {
     '@nuxt/typescript-build',
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
+  modules: [
+    // // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios',
+    // // Doc: https://github.com/nuxt-community/dotenv-module
+    // '@nuxtjs/dotenv',
+    [
+      'nuxt-i18n',
+      {
+        locales: [
+          { code: 'ja', name: 'Japanese', iso: 'ja_JP', file: 'ja.json' },
+          { code: 'en', name: 'English', iso: 'en-US', file: 'en.json' }
+        ],
+        defaultLocale: 'ja',
+        langDir: 'locales/',
+        strategy: 'prefix_and_default',
+        vueI18n: {
+          fallbackLocale: 'ja'
+        },
+        vueI18nLoader: true,
+        lazy: true
+      }
+    ]
+  ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
 }

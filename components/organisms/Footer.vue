@@ -1,13 +1,14 @@
 <template>
   <footer class="l-footer">
     <div class="l-footer__inner">
-      <slot></slot>
+      <Copyright />
     </div>
   </footer>
 </template>
 
 <script>
+import Copyright from '@/components/atoms/copyrights/Copyright'
 export default {
-  name: "NuxtFooter"
+  components: { Copyright }
 }
 </script>

@@ -1,16 +1,16 @@
 <template>
   <UserTemplate>
-    <Login/>
+    <CreatePre/>
   </UserTemplate>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import UserTemplate from '@/components/templates/UserTemplate.vue'
-import Login from '@/components/organisms/users/Login.vue'
+import CreatePre from '@/components/organisms/users/CreatePre.vue'
 
 export default Vue.extend({
-    name: "IndexPage",
-    components: { UserTemplate, Login },
+    name: "CreatePrePage",
+    components: { UserTemplate, CreatePre }
 })
 </script>
