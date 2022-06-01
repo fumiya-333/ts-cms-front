@@ -1,30 +1,23 @@
 <template>
   <Wrapper>
-    <Header>
-      <BaseH1></BaseH1>
-    </Header>
+    <Header/>
     <Contents>
       <Main>
         <slot></slot>
       </Main>
     </Contents>
-    <Footer>
-      <BaseCopyright />
-    </Footer>
+    <Footer/>
   </Wrapper>
 </template>
 
 <script>
-import Header from '@/components/molecules/Header.vue'
-import Footer from '@/components/molecules/Footer.vue'
-import Wrapper from '@/components/molecules/Wrapper.vue'
-import Contents from '@/components/molecules/Contents.vue'
-import Main from '@/components/molecules/Main.vue'
-import BaseH1 from '@/components/atoms/headings/BaseH1.vue'
-import BaseCopyright from '@/components/atoms/copyrights/BaseCopyright.vue'
+import Header from '@/components/organisms/Header'
+import Footer from '@/components/organisms/Footer'
+import Wrapper from '@/components/organisms/Wrapper'
+import Contents from '@/components/organisms/Contents'
+import Main from '@/components/organisms/Main'
 
 export default {
-    name: "NuxtLoginTemplate",
-    components: { Header, Footer, Wrapper, Contents, Main, BaseH1, BaseCopyright }
+  components: { Header, Footer, Wrapper, Contents, Main }
 }
 </script>

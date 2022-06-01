@@ -1,16 +1,16 @@
 <template>
   <UserTemplate>
-    <Login/>
+    <PasswordResetPre/>
   </UserTemplate>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import UserTemplate from '@/components/templates/UserTemplate.vue'
-import Login from '@/components/organisms/users/Login.vue'
+import PasswordResetPre from '@/components/organisms/users/PasswordResetPre.vue'
 
 export default Vue.extend({
-  name: "IndexPage",
-  components: { UserTemplate, Login },
+  name: "PasswordResetPrePage",
+  components: { UserTemplate, PasswordResetPre }
 })
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <a class="c-btn" :class="btnClass"><span><slot></slot></span></a>
+  <a class="c-btn" :class="btnClass" @click="$emit('click')"><span><slot></slot></span></a>
 </template>
 
 <script>

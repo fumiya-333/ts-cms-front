@@ -1,54 +1,51 @@
 <template>
   <User>
+    <FormLabel>{{ $t('form.name') }}</FormLabel>
+    <PlaneText :value="$v.form.name.$model" placeholder="浦島 太郎" @input="$v.form.name.$model = $event"></PlaneText>
+    <div v-if="$v.form.name.$error && !$v.form.name.required" class="u-error-msg">{{ $t('form.name') }}{{ $t('error.required') }}</div>
     <FormLabel>{{ $t('form.email') }}</FormLabel>
     <EmailText :value="$v.form.email.$model" placeholder="example@example.com" @input="$v.form.email.$model = $event"/>
     <div v-if="$v.form.email.$error && !$v.form.email.required" class="u-error-msg">{{ $t('form.email') }}{{ $t('error.required') }}</div>
-    <div v-if="$v.form.email.$error && !$v.form.email.email" class="u-error-msg">{{ $t('error.email') }}</div>
     <FormLabel>{{ $t('form.password') }}</FormLabel>
     <PasswordText :value="$v.form.password.$model" @input="$v.form.password.$model = $event"/>
     <div v-if="$v.form.password.$error && !$v.form.password.required" class="u-error-msg">{{ $t('form.password') }}{{ $t('error.required') }}</div>
-    <Link href="password-reset-pre" href-class="u-flex-end p-users__inner__form__inner__password-reset-link">パスワードを忘れた</Link>
     <div class="p-users__inner__form__inner__btn-area">
-      <LoginBtn login-btn-class="p-users__inner__form__inner__btn-area-btn-login" @click="login"></LoginBtn>
-      <CreateLinkBtn create-pre-btn-class="p-users__inner__form__inner__btn-area-btn-create-pre"></CreateLinkBtn>
+      <CreatePreBtn create-pre-btn-class="p-users__inner__form__inner__btn-area-btn-create-pre" @click="createPre"></CreatePreBtn>
     </div>
   </User>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 import { required, email } from 'vuelidate/lib/validators'
 import User from '@/components/organisms/users/User'
 import FormLabel from '@/components/atoms/labels/BaseLabel'
 import EmailText from '@/components/atoms/texts/EmailText'
+import CreatePreBtn from '@/components/molecules/btns/CreatePreBtn'
 import PasswordText from '@/components/atoms/texts/PasswordText'
-import Link from '@/components/atoms/links/BaseLink'
-import LoginBtn from '@/components/molecules/btns/LoginBtn'
-import CreateLinkBtn from '@/components/molecules/btns/CreateLinkBtn'
+import PlaneText from '@/components/atoms/texts/PlaneText'
 
 export default {
-  components: { User, FormLabel, EmailText, PasswordText, Link, LoginBtn, CreateLinkBtn },
+  components: { User, FormLabel, EmailText, CreatePreBtn, PasswordText, PlaneText },
   data(){
     return {
       form: {
+        name: "",
         email: "",
         password: "",
       }
     }
   },
-  computed: {
-    ...mapGetters(['users'])
-  },
   methods: {
-    async login() {
+    createPre() {
       this.$v.$touch()
-      if(!this.$v.$invalid){
-        await this.$store.dispatch('users/login')
-      }
+      // if(!this.$v.$invalid){
+
+      // }
     }
   },
   validations: {
     form: {
+      name: { required },
       email: { required, email },
       password: { required },
     }

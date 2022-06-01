@@ -5,7 +5,5 @@
 </template>
 
 <script>
-export default {
-  name: 'NuxtMain',
-}
+export default {}
 </script>
