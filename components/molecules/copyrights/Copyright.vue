@@ -1,11 +1,14 @@
 <template>
-  <div class="c-copyright m-fadein">
+  <Box box-class="u-text-sz3 u-text-w7">
     © {{ year }} {{ $t('title') }}.
-  </div>
+  </Box>
 </template>
 
 <script>
+import Box from '@/components/atoms/boxs/Box'
+
 export default {
+  components: { Box },
   data() {
     return {
       year: this.$getYear()

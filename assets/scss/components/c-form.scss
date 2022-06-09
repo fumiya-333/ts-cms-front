@@ -1,10 +1,18 @@
 .c-form {
   &__inner {
+    @include mq(sp){
+      width: 100%;
+      padding: 0 16px;
+    }
     label, input, select, textarea, button, a {
       display: block;
     }
     label {
+      padding: 42px 0 14px 0;
       font-weight: bold;
+      &:first-child {
+        padding: 0 0 14px 0;
+      }
     }
   }
 }

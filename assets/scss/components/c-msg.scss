@@ -1,9 +1,3 @@
-.u-error-msg {
-  margin-top: 12px;
-  font-size: 14px;
-  color: #FF0000;
-}
-
 .c-msg {
   &__inner {
     &__error, &__info {
@@ -13,4 +7,10 @@
       line-height: 2;
     }
   }
+}
+
+.c-error-msg {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #FF0000;
 }

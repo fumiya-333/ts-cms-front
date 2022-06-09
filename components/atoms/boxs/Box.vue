@@ -1,13 +1,11 @@
 <template>
-  <main class="l-main" :class="mainClass">
-    <slot></slot>
-  </main>
+  <div class="m-fadein" :class="boxClass"><slot></slot></div>
 </template>
 
 <script>
 export default {
   props: {
-    mainClass: {
+    boxClass: {
       type: String,
       default: "",
     },

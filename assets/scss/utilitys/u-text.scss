@@ -1,0 +1,11 @@
+@for $i from 0 through 10 {
+  .u-text-sz#{$i} {
+    font-size:#{$i * 4}px;
+  }
+}
+
+@for $i from 0 through 7 {
+  .u-text-w#{$i} {
+    font-weight:#{$i * 100};
+  }
+}

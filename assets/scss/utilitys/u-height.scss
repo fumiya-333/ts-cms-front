@@ -1,0 +1,5 @@
+@for $i from 0 through 40 {
+  .u-h#{$i} {
+    height:#{$i * 50}px;
+  }
+}

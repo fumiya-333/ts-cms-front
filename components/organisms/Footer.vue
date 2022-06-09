@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Copyright from '@/components/atoms/copyrights/Copyright'
+import Copyright from '@/components/molecules/copyrights/Copyright'
 export default {
   components: { Copyright }
 }
