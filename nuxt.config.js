@@ -1,3 +1,5 @@
+const globImporter = require('node-sass-glob-importer')
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -16,7 +18,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    { src: '@/assets/css/style.css' },
+    { src: '@/assets/scss/style.scss' },
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -56,8 +58,15 @@ export default {
         vueI18nLoader: true,
         lazy: true
       }
-    ]
+    ],
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
+  build: {
+    extend(config, {loaders: {scss}}) {
+      const sassOptions = scss.sassOptions || {}
+      sassOptions.importer = globImporter()
+      scss.sassOptions = sassOptions
+    }
+  }
 }
