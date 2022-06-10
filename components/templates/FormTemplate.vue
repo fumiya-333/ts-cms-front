@@ -6,6 +6,9 @@
         <Form>
           <slot></slot>
         </Form>
+        <!-- <Teleport to="alert">
+          <Alert :open="false"></Alert>
+        </Teleport> -->
       </Main>
     </Contents>
     <Footer/>
@@ -19,8 +22,15 @@ import Wrapper from '@/components/organisms/Wrapper'
 import Contents from '@/components/organisms/Contents'
 import Main from '@/components/organisms/Main'
 import Form from '@/components/organisms/Form'
+import Alert from '@/components/atoms/dialogs/Alert'
 
 export default {
-  components: { Header, Footer, Wrapper, Contents, Main, Form }
+  components: { Header, Footer, Wrapper, Contents, Main, Form, Alert },
+  props: {
+    open: {
+      type: Boolean,
+      default: false,
+    },
+  }
 }
 </script>
