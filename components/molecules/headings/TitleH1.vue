@@ -1,5 +1,5 @@
 <template>
-  <H1><a href="/">{{ $t('title') }}</a></H1>
+  <H1 href="/">{{ $t('title') }}</H1>
 </template>
 
 <script>
