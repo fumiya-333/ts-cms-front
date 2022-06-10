@@ -1,6 +1,8 @@
 import { Context } from '@nuxt/types'
 import axios from 'axios'
 
+axios.defaults.baseURL = process.env.API_BASE_URL
+
 export const httpGet = async (uri: string, params: object) => {
   return await axios.get(uri, params).catch((e) => {
     if(!e.response) {

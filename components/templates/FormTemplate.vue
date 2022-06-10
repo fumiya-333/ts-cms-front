@@ -1,9 +1,9 @@
 <template>
   <Wrapper>
     <Header/>
-    <Contents>
-      <Main main-class="u-w14 u-m-x-center">
-        <Form form-inner-class="u-my20">
+    <Contents contents-class="u-w14 u-m-x-center">
+      <Main main-class="u-my20">
+        <Form>
           <slot></slot>
         </Form>
       </Main>

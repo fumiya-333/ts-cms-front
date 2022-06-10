@@ -1,5 +1,8 @@
 const globImporter = require('node-sass-glob-importer')
 
+require('dotenv').config()
+const { API_BASE_URL } = process.env;
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -68,5 +71,9 @@ export default {
       sassOptions.importer = globImporter()
       scss.sassOptions = sassOptions
     }
-  }
+  },
+
+  env: {
+    API_BASE_URL
+  },
 }

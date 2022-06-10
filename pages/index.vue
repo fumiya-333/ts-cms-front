@@ -20,10 +20,10 @@ import { mapGetters } from 'vuex'
 import { required, email } from 'vuelidate/lib/validators'
 import Vue from 'vue'
 import FormTemplate from '@/components/templates/FormTemplate.vue'
-import FormLabel from '@/components/atoms/labels/BaseLabel.vue'
+import FormLabel from '@/components/atoms/labels/Label.vue'
 import EmailText from '@/components/atoms/texts/EmailText.vue'
 import PasswordText from '@/components/atoms/texts/PasswordText.vue'
-import Link from '@/components/atoms/links/BaseLink.vue'
+import Link from '@/components/atoms/links/Link.vue'
 import LoginBtn from '@/components/molecules/btns/LoginBtn.vue'
 import CreateLinkBtn from '@/components/molecules/btns/CreateLinkBtn.vue'
 
@@ -45,7 +45,7 @@ export default Vue.extend({
     async login() {
       this.$v.$touch()
       if(!this.$v.$invalid){
-        await this.$store.dispatch('users/login')
+        await this.$store.dispatch('users/login', { email: this.form.email, password: this.form.password })
       }
     }
   },

@@ -20,7 +20,7 @@
 import Vue from 'vue'
 import { required, email } from 'vuelidate/lib/validators'
 import FormTemplate from '@/components/templates/FormTemplate.vue'
-import FormLabel from '@/components/atoms/labels/BaseLabel.vue'
+import FormLabel from '@/components/atoms/labels/Label.vue'
 import EmailText from '@/components/atoms/texts/EmailText.vue'
 import CreatePreBtn from '@/components/molecules/btns/CreatePreBtn.vue'
 import PasswordText from '@/components/atoms/texts/PasswordText.vue'
