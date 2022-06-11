@@ -1,5 +1,5 @@
 <template>
-  <Btn name="create-pre" btn-class="c-btn-create-pre" :class="createPreBtnClass" @click="$emit('click')">新規登録</Btn>
+  <Btn name="create-pre" btn-class="u-bg-warning border1 u-text-white" :class="createPreBtnClass" @click="$emit('click')">新規登録</Btn>
 </template>
 
 <script>

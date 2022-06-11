@@ -1,5 +1,5 @@
 <template>
-  <Alert :open="open" alert-class="warningMsgClass">
+  <Alert :open="open" alert-class="u-bg-warning u-text-white">
     {{ msg }}
   </Alert>
 </template>
@@ -13,10 +13,6 @@ export default {
     open: {
       type: Boolean,
       default: false,
-    },
-    warningMsgClass: {
-      type: String,
-      default: "",
     },
     msg: {
       type: String,

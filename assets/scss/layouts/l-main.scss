@@ -1,3 +1,6 @@
 .l-main {
   display: block;
+  @include mq(sp){
+    padding: 0 16px;
+  }
 }

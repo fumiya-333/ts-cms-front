@@ -1,5 +1,5 @@
 <template>
-  <LinkBtn name="create" href="/create-pre" link-btn-class="c-btn-create-pre" :class="createPreBtnClass" @click="$emit('click')">新規登録</LinkBtn>
+  <LinkBtn name="create" href="/create-pre" link-btn-class="u-bg-warning border1 u-text-white" :class="createPreBtnClass" @click="$emit('click')">新規登録</LinkBtn>
 </template>
 
 <script>

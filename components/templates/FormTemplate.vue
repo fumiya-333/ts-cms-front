@@ -2,7 +2,7 @@
   <Wrapper>
     <Header/>
     <Contents contents-class="u-w14 u-m-x-center">
-      <Main main-class="u-my20">
+      <Main main-class="u-my10">
         <Form>
           <slot></slot>
         </Form>

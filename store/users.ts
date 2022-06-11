@@ -12,7 +12,7 @@ export const getters: GetterTree<RootState, RootState> = {
 }
 
 export const mutations: MutationTree<RootState> = {
-  SET_USERS: (state, user: []) => (state.users = user),
+  SET_USERS: (state, users: []) => (state.users = users),
 }
 
 export const actions: ActionTree<RootState, RootState> = {

@@ -1,6 +1,6 @@
 <template>
-  <form class="c-form m-fadein" :class="formClass">
-    <div class="c-form__inner" :class="formInnerClass">
+  <form class="m-fadein" :class="formClass">
+    <div :class="formInnerClass">
       <slot></slot>
     </div>
   </form>

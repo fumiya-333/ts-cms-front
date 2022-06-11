@@ -1,5 +1,5 @@
 <template>
-  <input :type="type" :name="name" class="c-input" :class="textClass" :value="value" @input="$emit('input', $event.target.value)">
+  <input :type="type" :name="name" class="u-w100 u-border1 u-border-secondary u-rounded1 u-outline1 u-outline-secondary" :class="textClass" :value="value" @input="$emit('input', $event.target.value)">
 </template>
 
 <script>

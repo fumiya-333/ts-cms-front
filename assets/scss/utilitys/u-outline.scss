@@ -1,0 +1,41 @@
+.u-outline-primary {
+  outline-color: #007bff!important;
+}
+
+.u-outline-secondary {
+  outline-color: #6c757d!important;
+}
+
+.u-outline-success {
+  outline-color: #28a745!important;
+}
+
+.u-outline-danger {
+  outline-color: #dc3545!important;
+}
+
+.u-outline-warning {
+  outline-color: #ffc107!important;
+}
+
+.u-outline-info {
+  outline-color: #17a2b8!important;
+}
+
+.u-outline-light {
+  outline-color: #f8f9fa!important;
+}
+
+.u-outline-dark {
+  outline-color: #343a40!important;
+}
+
+.u-outline-white {
+  outline-color: #fff!important;
+}
+
+@for $i from 0 through 50 {
+  .u-outline#{$i} {
+    outline:#{$i * 1}px;
+  }
+}

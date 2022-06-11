@@ -1,5 +1,5 @@
 <template>
-  <Btn name="login" btn-class="c-btn-login" :class="btnClass" @click="$emit('click')">ログイン</Btn>
+  <Btn name="login" btn-class="u-bg-primary border1 u-text-white" :class="btnClass" @click="$emit('click')">ログイン</Btn>
 </template>
 
 <script>
