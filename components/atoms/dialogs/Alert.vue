@@ -1,5 +1,5 @@
 <template>
-  <div v-if="open" class="alert" :class="alertClass">
+  <div v-if="open" class="c-alert" :class="alertClass">
     <slot></slot>
   </div>
 </template>

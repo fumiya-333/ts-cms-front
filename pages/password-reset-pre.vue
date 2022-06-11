@@ -5,7 +5,7 @@
     <div v-if="$v.form.email.$error && !$v.form.email.required" class="c-error-msg">{{ $t('form.email') }}{{ $t('error.required') }}</div>
     <div v-if="$v.form.email.$error && !$v.form.email.email" class="c-error-msg">{{ $t('error.email') }}</div>
     <div class="u-mt10">
-      <PasswordResetPreBtn password-reset-pre-btn-class="u-w4 u-h1 u-m-x-center u-align-center u-text-sz4" @click="passwordReset"></PasswordResetPreBtn>
+      <PasswordResetPreBtn password-reset-pre-btn-class="u-w5 u-h1 u-m-x-center u-align-center u-text-sz4" @click="passwordReset"></PasswordResetPreBtn>
     </div>
   </FormTemplate>
 </template>

@@ -12,18 +12,17 @@ export const getters: GetterTree<RootState, RootState> = {
 }
 
 export const mutations: MutationTree<RootState> = {
-  SET_USERS: (state, users: []) => (state.users = users),
+  SET_USERS: (state, user: []) => (state.users = user),
 }
 
 export const actions: ActionTree<RootState, RootState> = {
   async login({ commit }, { email, password }) {
     return await httpPost('', { email, password } )
     .then(({ data }) => {
-      commit('SET_USERS', { users: data })
+      commit('SET_USERS', { success: data.success, response: data.response })
     })
-    .catch(() => {
-    })
-    .finally(() => {
+    .catch((e) => {
+      commit('SET_USERS', { e })
     })
   }
 }

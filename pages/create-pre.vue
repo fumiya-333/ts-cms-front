@@ -11,7 +11,7 @@
     <PasswordText password-class="u-px2 u-py1 u-text-sz4"  :value="$v.form.password.$model" @input="$v.form.password.$model = $event"/>
     <div v-if="$v.form.password.$error && !$v.form.password.required" class="c-error-msg">{{ $t('form.password') }}{{ $t('error.required') }}</div>
     <div class="u-mt10">
-      <CreatePreBtn create-pre-btn-class="u-w4 u-h1 u-m-x-center u-align-center u-text-sz4" @click="createPre"></CreatePreBtn>
+      <CreatePreBtn create-pre-btn-class="u-w5 u-h1 u-m-x-center u-align-center u-text-sz4" @click="createPre"></CreatePreBtn>
     </div>
   </FormTemplate>
 </template>

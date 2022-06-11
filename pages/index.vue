@@ -9,9 +9,10 @@
     <div v-if="$v.form.password.$error && !$v.form.password.required" class="c-error-msg">{{ $t('form.password') }}{{ $t('error.required') }}</div>
     <Link href="password-reset-pre" href-class="u-flex-end u-mt3">パスワードを忘れた</Link>
     <div class="u-mt10">
-      <LoginBtn login-btn-class="u-w4 u-h1 u-m-x-center u-align-center u-text-sz4" @click="login"></LoginBtn>
-      <CreateLinkBtn create-pre-btn-class="u-w4 u-h1 u-mt2 u-m-x-center u-align-center u-text-sz4"></CreateLinkBtn>
+      <LoginBtn login-btn-class="u-w5 u-h1 u-m-x-center u-align-center u-text-sz4" @click="login"></LoginBtn>
+      <CreateLinkBtn create-pre-btn-class="u-w5 u-h1 u-mt2 u-m-x-center u-align-center u-text-sz4"></CreateLinkBtn>
     </div>
+    <WarningMsg :open="open" :msg="msg"></WarningMsg>
   </FormTemplate>
 </template>
 
@@ -26,16 +27,19 @@ import PasswordText from '@/components/atoms/texts/PasswordText.vue'
 import Link from '@/components/atoms/links/Link.vue'
 import LoginBtn from '@/components/molecules/btns/LoginBtn.vue'
 import CreateLinkBtn from '@/components/molecules/btns/CreateLinkBtn.vue'
+import WarningMsg from '@/components/molecules/dialogs/WarningMsg.vue'
 
 export default Vue.extend({
   name: "IndexPage",
-  components: { FormTemplate, FormLabel, EmailText, PasswordText, Link, LoginBtn, CreateLinkBtn },
-  data(){
+  components: { FormTemplate, FormLabel, EmailText, PasswordText, Link, LoginBtn, CreateLinkBtn, WarningMsg },
+  data() {
     return {
       form: {
         email: "",
         password: "",
-      }
+      },
+      open: false,
+      msg: "",
     }
   },
   computed: {
@@ -46,7 +50,17 @@ export default Vue.extend({
       this.$v.$touch()
       if(!this.$v.$invalid){
         await this.$store.dispatch('users/login', { email: this.form.email, password: this.form.password })
+        const users = this.$store.state.users.users
+        if(users.success){
+          console.log(users)
+        }else{
+          this.showMsg(users.response.msg)
+        }
       }
+    },
+    showMsg(msg: String) {
+      this.msg = msg
+      this.open = true
     }
   },
   validations: {
