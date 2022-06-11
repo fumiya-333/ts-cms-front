@@ -1,11 +1,11 @@
 <template>
-  <div class="m-fadein" :class="boxClass"><slot></slot></div>
+  <a class="c-link-btn" :class="linkBtnClass" @click="$emit('click')"><span><slot></slot></span></a>
 </template>
 
 <script>
 export default {
   props: {
-    boxClass: {
+    linkBtnClass: {
       type: String,
       default: "",
     },

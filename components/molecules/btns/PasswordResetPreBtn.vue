@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Btn from '@/components/atoms/btns/Btn'
+import Btn from '@/components/atoms/Btn'
 
 export default {
   components: { Btn },

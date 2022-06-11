@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import H1 from '@/components/atoms/headings/H1'
+import H1 from '@/components/atoms/H1'
 
 export default {
   components: { H1 },

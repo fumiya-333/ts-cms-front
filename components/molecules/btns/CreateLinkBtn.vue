@@ -1,9 +1,9 @@
 <template>
-  <LinkBtn name="create" href="/create-pre" btn-class="c-btn-create-pre" :class="createPreBtnClass" @click="$emit('click')">新規登録</LinkBtn>
+  <LinkBtn name="create" href="/create-pre" link-btn-class="c-btn-create-pre" :class="createPreBtnClass" @click="$emit('click')">新規登録</LinkBtn>
 </template>
 
 <script>
-import LinkBtn from '@/components/atoms/btns/LinkBtn'
+import LinkBtn from '@/components/atoms/LinkBtn'
 
 export default {
   components: { LinkBtn },

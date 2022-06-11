@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Alert from '@/components/atoms/dialogs/Alert'
+import Alert from '@/components/atoms/Alert'
 
 export default {
   components: { Alert },

@@ -1,14 +1,14 @@
 <template>
-  <Btn name="login" btn-class="c-btn-login" :class="loginBtnClass" @click="$emit('click')">ログイン</Btn>
+  <Btn name="login" btn-class="c-btn-login" :class="btnClass" @click="$emit('click')">ログイン</Btn>
 </template>
 
 <script>
-import Btn from '@/components/atoms/btns/Btn'
+import Btn from '@/components/atoms/Btn'
 
 export default {
   components: { Btn },
   props: {
-    loginBtnClass: {
+    btnClass: {
       type: String,
       default: "",
     },

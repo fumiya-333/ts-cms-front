@@ -1,11 +1,11 @@
 <template>
-  <a class="c-btn" :class="btnClass" @click="$emit('click')"><span><slot></slot></span></a>
+  <div :class="boxClass"><slot></slot></div>
 </template>
 
 <script>
 export default {
   props: {
-    btnClass: {
+    boxClass: {
       type: String,
       default: "",
     },

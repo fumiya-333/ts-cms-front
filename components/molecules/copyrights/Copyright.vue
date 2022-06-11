@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Box from '@/components/atoms/boxs/Box'
+import Box from '@/components/atoms/Box'
 
 export default {
   components: { Box },
