@@ -7,8 +7,8 @@ export default {
   props: {
     hrefClass: {
       type: String,
-      default: "",
+      default: '',
     },
-  }
+  },
 }
 </script>

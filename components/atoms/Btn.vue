@@ -7,8 +7,8 @@ export default {
   props: {
     btnClass: {
       type: String,
-      default: "",
+      default: '',
     },
-  }
+  },
 }
 </script>

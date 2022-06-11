@@ -12,15 +12,15 @@
 
 @for $i from 0 through 100 {
   .u-top#{$i} {
-    top:#{$i * 1}px;
+    top: #{$i * 1}px;
   }
   .u-right#{$i} {
-    right:#{$i * 1}px;
+    right: #{$i * 1}px;
   }
   .u-bottom#{$i} {
-    bottom:#{$i * 1}px;
+    bottom: #{$i * 1}px;
   }
   .u-left#{$i} {
-    left:#{$i * 1}px;
+    left: #{$i * 1}px;
   }
 }

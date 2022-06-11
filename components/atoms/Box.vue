@@ -7,8 +7,8 @@ export default {
   props: {
     boxClass: {
       type: String,
-      default: "",
+      default: '',
     },
-  }
+  },
 }
 </script>

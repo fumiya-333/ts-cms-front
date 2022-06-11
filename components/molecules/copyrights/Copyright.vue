@@ -1,7 +1,5 @@
 <template>
-  <Box box-class="u-text-sz3 u-text-w7">
-    © {{ year }} {{ $t('title') }}.
-  </Box>
+  <Box box-class="u-text-sz3 u-text-w7"> © {{ year }} {{ $t('title') }}. </Box>
 </template>
 
 <script>
@@ -11,8 +9,8 @@ export default {
   components: { Box },
   data() {
     return {
-      year: this.$getYear()
+      year: this.$getYear(),
     }
-  }
+  },
 }
 </script>

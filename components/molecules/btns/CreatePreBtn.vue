@@ -1,5 +1,11 @@
 <template>
-  <Btn name="create-pre" btn-class="u-bg-warning border1 u-text-white" :class="createPreBtnClass" @click="$emit('click')">新規登録</Btn>
+  <Btn
+    name="create-pre"
+    btn-class="u-bg-warning border1 u-text-white"
+    :class="createPreBtnClass"
+    @click="$emit('click')"
+    >新規登録</Btn
+  >
 </template>
 
 <script>
@@ -10,8 +16,8 @@ export default {
   props: {
     createPreBtnClass: {
       type: String,
-      default: "",
+      default: '',
     },
-  }
+  },
 }
 </script>

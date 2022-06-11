@@ -1,10 +1,10 @@
 @for $i from 0 through 50 {
   .u-w#{$i} {
-    width:#{$i * 40}px;
+    width: #{$i * 40}px;
     max-width: 100%;
   }
   .u-max-w#{$i} {
-    max-width:#{$i * 40}px;
+    max-width: #{$i * 40}px;
   }
 }
 

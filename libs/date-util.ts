@@ -1,14 +1,14 @@
-import { Context } from "@nuxt/types"
+import { Context } from '@nuxt/types'
 
 const getNow = () => {
   return new Date()
 }
 
 const getYear = () => {
-  return (new Date()).getFullYear()
+  return new Date().getFullYear()
 }
 
-export default (context: Context, inject: Function) => {
+export default (_context: Context, inject: Function) => {
   inject('getNow', getNow)
   inject('getYear', getYear)
 }

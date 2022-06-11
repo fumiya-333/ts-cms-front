@@ -1,17 +1,17 @@
 @for $i from 0 through 10 {
   .u-text-sz#{$i} {
-    font-size:#{$i * 4}px;
+    font-size: #{$i * 4}px;
   }
 }
 
 @for $i from 0 through 7 {
   .u-text-w#{$i} {
-    font-weight:#{$i * 100};
+    font-weight: #{$i * 100};
   }
 }
 
 @for $i from 0 through 100 {
   .u-line-height#{$i} {
-    line-height:#{$i * 0.1};
+    line-height: #{$i * 0.1};
   }
 }

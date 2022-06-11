@@ -9,8 +9,8 @@ export default {
   props: {
     contentsClass: {
       type: String,
-      default: "",
+      default: '',
     },
-  }
+  },
 }
 </script>

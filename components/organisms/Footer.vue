@@ -9,6 +9,6 @@
 <script>
 import Copyright from '@/components/molecules/copyrights/Copyright'
 export default {
-  components: { Copyright }
+  components: { Copyright },
 }
 </script>

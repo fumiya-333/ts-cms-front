@@ -7,8 +7,8 @@ export default {
   props: {
     labelClass: {
       type: String,
-      default: "",
-    }
-  }
+      default: '',
+    },
+  },
 }
 </script>

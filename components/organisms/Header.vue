@@ -9,6 +9,6 @@
 <script>
 import TitleH1 from '@/components/molecules/headings/TitleH1'
 export default {
-  components: { TitleH1 }
+  components: { TitleH1 },
 }
 </script>

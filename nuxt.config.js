@@ -17,16 +17,10 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    { src: '@/assets/scss/style.scss' },
-  ],
+  css: [{ src: '@/assets/scss/style.scss' }],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    '@/libs/date-util',
-    '@/libs/api-util',
-    '@/libs/vuelidate',
-  ],
+  plugins: ['@/libs/date-util', '@/libs/api-util', '@/libs/vuelidate'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -48,26 +42,26 @@ export default {
       {
         locales: [
           { code: 'ja', name: 'Japanese', iso: 'ja_JP', file: 'ja.json' },
-          { code: 'en', name: 'English', iso: 'en-US', file: 'en.json' }
+          { code: 'en', name: 'English', iso: 'en-US', file: 'en.json' },
         ],
         defaultLocale: 'ja',
         langDir: 'locales/',
         strategy: 'prefix_and_default',
         vueI18n: {
-          fallbackLocale: 'ja'
+          fallbackLocale: 'ja',
         },
         vueI18nLoader: true,
-        lazy: true
-      }
+        lazy: true,
+      },
     ],
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    extend(config, {loaders: {scss}}) {
+    extend(_config, { loaders: { scss } }) {
       const sassOptions = scss.sassOptions || {}
       sassOptions.importer = globImporter()
       scss.sassOptions = sassOptions
-    }
+    },
   },
 }

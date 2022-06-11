@@ -11,12 +11,12 @@ export default {
   props: {
     formClass: {
       type: String,
-      default: "",
+      default: '',
     },
     formInnerClass: {
       type: String,
-      default: "",
+      default: '',
     },
-  }
+  },
 }
 </script>

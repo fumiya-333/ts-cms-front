@@ -10,12 +10,12 @@ export default {
   props: {
     href: {
       type: String,
-      default: "",
+      default: '',
     },
     btnClass: {
       type: String,
-      default: "",
+      default: '',
     },
-  }
+  },
 }
 </script>

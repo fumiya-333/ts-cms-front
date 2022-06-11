@@ -2,19 +2,18 @@ module.exports = {
   root: true,
   env: {
     browser: true,
+    es6: true,
     node: true,
   },
-  extends: [
-    '@nuxtjs/eslint-config-typescript',
-    'plugin:nuxt/recommended',
-    'prettier',
-  ],
+  extends: ['@nuxtjs/eslint-config-typescript', 'plugin:nuxt/recommended', 'prettier'],
   plugins: [],
   rules: {
-    "vue/html-closing-bracket-newline": [2, {"multiline": "never"}],
-    "no-extra-parens": 1,
-    "no-multi-spaces": 2,
-    "no-multiple-empty-lines": [2, {"max": 1}],
-    semi: [2, "never"],
+    semi: [2, 'never'],
+    'vue/html-closing-bracket-newline': 'off',
+    'vue/multi-word-component-names': 'off',
+    'nuxt/no-cjs-in-config': 'off',
+    'no-console': 'off',
+    'no-extra-parens': 1,
+    'no-multi-spaces': 2,
   },
 }

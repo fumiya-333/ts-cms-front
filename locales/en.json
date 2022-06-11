@@ -1,12 +1,12 @@
 {
   "title": "TS-CMS",
   "form": {
-    "name" : "name",
-    "email" : "email",
-    "password" : "password"
+    "name": "name",
+    "email": "email",
+    "password": "password"
   },
-  "error" : {
-    "required" : "Please enter.",
-    "email" : "Please enter the correct email address."
+  "error": {
+    "required": "Please enter.",
+    "email": "Please enter the correct email address."
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <Wrapper>
-    <Header/>
+    <Header />
     <Contents contents-class="u-w14 u-m-x-center">
       <Main main-class="u-my10">
         <Form>
@@ -8,7 +8,7 @@
         </Form>
       </Main>
     </Contents>
-    <Footer/>
+    <Footer />
   </Wrapper>
 </template>
 
@@ -27,6 +27,6 @@ export default {
       type: Boolean,
       default: false,
     },
-  }
+  },
 }
 </script>

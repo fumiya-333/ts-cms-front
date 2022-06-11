@@ -6,28 +6,30 @@
   animation: fadeout 2s ease 0s 1 forwards;
 }
 
-.dialog-enter-active, .dialog-leave-active {
-  transition: opacity .5s;
+.dialog-enter-active,
+.dialog-leave-active {
+  transition: opacity 0.5s;
 }
 
-.dialog-enter, .dialog-leave-active {
+.dialog-enter,
+.dialog-leave-active {
   opacity: 0;
 }
 
 @keyframes fadein {
   from {
-      opacity: 0;
+    opacity: 0;
   }
   to {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
 @keyframes fadeout {
   from {
-      opacity: 1;
+    opacity: 1;
   }
   to {
-      opacity: 0;
+    opacity: 0;
   }
 }

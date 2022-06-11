@@ -5,13 +5,12 @@
 </template>
 
 <script>
-
 export default {
   props: {
     alertClass: {
       type: String,
-      default: "",
+      default: '',
     },
-  }
+  },
 }
 </script>
