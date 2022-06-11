@@ -2,41 +2,23 @@
   .u-pt#{$i} {
     padding-top:#{$i * 8}px;
   }
-}
-
-@for $i from 0 through 100 {
   .u-pb#{$i} {
     padding-bottom:#{$i * 8}px;
   }
-}
-
-@for $i from 0 through 100 {
   .u-pl#{$i} {
     padding-left:#{$i * 8}px;
   }
-}
-
-@for $i from 0 through 100 {
   .u-pr#{$i} {
     padding-right:#{$i * 8}px;
   }
-}
-
-@for $i from 0 through 100 {
   .u-px#{$i} {
     padding-right: #{$i * 8}px;
     padding-left: #{$i * 8}px;
   }
-}
-
-@for $i from 0 through 100 {
   .u-py#{$i} {
     padding-top: #{$i * 8}px;
     padding-bottom: #{$i * 8}px;
   }
-}
-
-@for $i from 0 through 100 {
   .u-p#{$i} {
     padding: #{$i * 8}px;
   }

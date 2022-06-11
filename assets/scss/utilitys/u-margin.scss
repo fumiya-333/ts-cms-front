@@ -14,41 +14,23 @@
   .u-mt#{$i} {
     margin-top:#{$i * 8}px;
   }
-}
-
-@for $i from 0 through 100 {
   .u-mb#{$i} {
     margin-bottom:#{$i * 8}px;
   }
-}
-
-@for $i from 0 through 100 {
   .u-ml#{$i} {
     margin-left:#{$i * 8}px;
   }
-}
-
-@for $i from 0 through 100 {
   .u-mr#{$i} {
     margin-right:#{$i * 8}px;
   }
-}
-
-@for $i from 0 through 100 {
   .u-mx#{$i} {
     margin-right: #{$i * 8}px;
     margin-left: #{$i * 8}px;
   }
-}
-
-@for $i from 0 through 100 {
   .u-my#{$i} {
     margin-top: #{$i * 8}px;
     margin-bottom: #{$i * 8}px;
   }
-}
-
-@for $i from 0 through 100 {
   .u-m#{$i} {
     margin: #{$i * 8}px;
   }

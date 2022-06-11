@@ -12,7 +12,9 @@
       <LoginBtn btn-class="u-d-block u-w5 u-h1 u-m-x-center u-align-center u-text-sz4" @click="login"></LoginBtn>
       <CreateLinkBtn create-pre-btn-class="u-d-block u-w5 u-h1 u-mt2 u-m-x-center u-align-center u-text-sz4"></CreateLinkBtn>
     </div>
-    <WarningAlert :open="open" :msg="warningMsg"></WarningAlert>
+    <transition name="dialog">
+      <WarningAlert v-show="open" :msg="warningMsg"></WarningAlert>
+    </transition>
   </FormTemplate>
 </template>
 
@@ -54,14 +56,11 @@ export default Vue.extend({
         if(users.success){
           console.log(users)
         }else{
-          this.showWarningMsg(users.response.msg)
+          this.warningMsg = users.response.msg
+          this.open = true
         }
       }
     },
-    showWarningMsg(warningMsg: string) {
-      this.warningMsg = warningMsg
-      this.open = true
-    }
   },
   validations: {
     form: {

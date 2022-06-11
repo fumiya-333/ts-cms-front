@@ -9,3 +9,18 @@
 .u-position-fixed {
   position: fixed;
 }
+
+@for $i from 0 through 100 {
+  .u-top#{$i} {
+    top:#{$i * 1}px;
+  }
+  .u-right#{$i} {
+    right:#{$i * 1}px;
+  }
+  .u-bottom#{$i} {
+    bottom:#{$i * 1}px;
+  }
+  .u-left#{$i} {
+    left:#{$i * 1}px;
+  }
+}

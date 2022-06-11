@@ -3,6 +3,9 @@
     width:#{$i * 40}px;
     max-width: 100%;
   }
+  .u-max-w#{$i} {
+    max-width:#{$i * 40}px;
+  }
 }
 
 .u-w100 {
