@@ -62,6 +62,6 @@ export default {
       const sassOptions = scss.sassOptions || {}
       sassOptions.importer = globImporter()
       scss.sassOptions = sassOptions
-    }
+    },
   },
 }
