@@ -1,9 +1,5 @@
 <template>
-  <Btn
-    name="password-reset-pre"
-    btn-class="u-bg-warning border1 u-text-white"
-    :class="btnClass"
-    @click="$emit('click')"
+  <Btn name="password-reset-pre" btn-class="u-bg-warning border1 u-text-white" :class="btnClass" @click="$emit('click')"
     >パスワード変更</Btn
   >
 </template>

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "dev:lint:format": "nuxt && prettier --write . && npm run lint:prettier && npm run lint:js",
+    "dev:lint:format": "nuxt && npx prettier --write . && npm run lint",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",

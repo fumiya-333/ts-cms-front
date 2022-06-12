@@ -20,9 +20,20 @@ export const actions: ActionTree<RootState, RootState> = {
     return await httpPost('/', { email, password })
       .then(({ data }) => {
         commit('SET_USERS', { success: data.success, response: data.response })
+        return true
       })
-      .catch((e) => {
-        commit('SET_USERS', { e })
+      .catch(() => {
+        return false
+      })
+  },
+  async createPre({ commit }, { name, email, password }) {
+    return await httpPost('/users/createPre', { name, email, password })
+      .then(({ data }) => {
+        commit('SET_USERS', { success: data.success, response: data.response })
+        return true
+      })
+      .catch(() => {
+        return false
       })
   },
 }
