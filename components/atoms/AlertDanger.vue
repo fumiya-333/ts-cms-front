@@ -1,6 +1,6 @@
 <template>
   <Alert alert-class="u-bg-danger u-text-white">
-    {{ msg }}
+    <slot></slot>
   </Alert>
 </template>
 

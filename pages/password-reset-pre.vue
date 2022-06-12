@@ -7,14 +7,14 @@
       :value="$v.form.email.$model"
       placeholder="example@example.com"
       @input="$v.form.email.$model = $event"
-    />
+    ></TextEmail>
     <div v-if="$v.form.email.$error && !$v.form.email.required" class="u-mt2 u-text-danger">
       {{ $t('form.email') }}{{ $t('error.required') }}
     </div>
     <div v-if="$v.form.email.$error && !$v.form.email.email" class="u-mt2 u-text-danger">{{ $t('error.email') }}</div>
     <div class="u-mt10">
       <PasswordResetPreBtn
-        password-reset-pre-btn-class="u-d-block u-w5 u-h1 u-m-x-center u-align-center u-text-sz4"
+        btn-class="u-d-block u-w5 u-h1 u-m-x-center u-align-center u-text-sz4"
         @click="passwordReset"
       ></PasswordResetPreBtn>
     </div>

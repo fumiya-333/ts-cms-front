@@ -2,7 +2,7 @@
   <Btn
     name="create-pre"
     btn-class="u-bg-warning border1 u-text-white"
-    :class="createPreBtnClass"
+    :class="btnClass"
     @click="$emit('click')"
     >新規登録</Btn
   >
@@ -14,7 +14,7 @@ import Btn from '@/components/atoms/Btn'
 export default {
   components: { Btn },
   props: {
-    createPreBtnClass: {
+    btnClass: {
       type: String,
       default: '',
     },

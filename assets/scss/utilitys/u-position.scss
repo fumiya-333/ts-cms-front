@@ -23,4 +23,16 @@
   .u-left#{$i} {
     left: #{$i * 1}px;
   }
+  .u-nv-top#{$i} {
+    top: #{$i * -1}px;
+  }
+  .u-nv-right#{$i} {
+    right: #{$i * -1}px;
+  }
+  .u-nv-bottom#{$i} {
+    bottom: #{$i * -1}px;
+  }
+  .u-nv-left#{$i} {
+    left: #{$i * -1}px;
+  }
 }

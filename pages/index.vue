@@ -26,11 +26,11 @@
     <div class="u-mt10">
       <LoginBtn btn-class="u-d-block u-w5 u-h1 u-m-x-center u-align-center u-text-sz4" @click="login"></LoginBtn>
       <CreateLinkBtn
-        create-pre-btn-class="u-d-block u-w5 u-h1 u-mt2 u-m-x-center u-align-center u-text-sz4"
+        link-btn-class="u-d-block u-w5 u-h1 u-mt2 u-m-x-center u-align-center u-text-sz4"
       ></CreateLinkBtn>
     </div>
     <transition name="dialog">
-      <WarningAlert v-show="open" :msg="warningMsg"></WarningAlert>
+      <ErrorMessage v-show="open" :msg="errorMsg" alert-class="u-nv-top70 u-w100"></ErrorMessage>
     </transition>
   </FormTemplate>
 </template>
@@ -46,11 +46,11 @@ import TextPassword from '@/components/atoms/TextPassword.vue'
 import Link from '@/components/atoms/Link.vue'
 import LoginBtn from '@/components/molecules/btns/LoginBtn.vue'
 import CreateLinkBtn from '@/components/molecules/btns/CreateLinkBtn.vue'
-import WarningAlert from '@/components/molecules/dialogs/WarningAlert.vue'
+import ErrorMessage from '@/components/molecules/dialogs/ErrorMessage.vue'
 
 export default Vue.extend({
   name: 'IndexPage',
-  components: { FormTemplate, Label, TextEmail, TextPassword, Link, LoginBtn, CreateLinkBtn, WarningAlert },
+  components: { FormTemplate, Label, TextEmail, TextPassword, Link, LoginBtn, CreateLinkBtn, ErrorMessage },
   data() {
     return {
       form: {
@@ -58,7 +58,7 @@ export default Vue.extend({
         password: '',
       },
       open: false,
-      warningMsg: '',
+      errorMsg: '',
     }
   },
   computed: {
@@ -73,9 +73,12 @@ export default Vue.extend({
         if (users.success) {
           console.log(users)
         } else {
-          this.warningMsg = users.response.msg
+          this.errorMsg = users.response.msg
           this.open = true
         }
+      }else{
+        this.errorMsg = this.$t('error.input')
+        this.open = true
       }
     },
   },

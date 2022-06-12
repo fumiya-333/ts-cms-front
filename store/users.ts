@@ -17,7 +17,7 @@ export const mutations: MutationTree<RootState> = {
 
 export const actions: ActionTree<RootState, RootState> = {
   async login({ commit }, { email, password }) {
-    return await httpPost('', { email, password })
+    return await httpPost('/', { email, password })
       .then(({ data }) => {
         commit('SET_USERS', { success: data.success, response: data.response })
       })

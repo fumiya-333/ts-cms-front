@@ -17,7 +17,7 @@
       :value="$v.form.email.$model"
       placeholder="example@example.com"
       @input="$v.form.email.$model = $event"
-    />
+    ></TextEmail>
     <div v-if="$v.form.email.$error && !$v.form.email.required" class="u-mt2 u-text-danger">
       {{ $t('form.email') }}{{ $t('error.required') }}
     </div>
@@ -28,16 +28,19 @@
       name="password"
       :value="$v.form.password.$model"
       @input="$v.form.password.$model = $event"
-    />
+    ></TextPassword>
     <div v-if="$v.form.password.$error && !$v.form.password.required" class="u-mt2 u-text-danger">
       {{ $t('form.password') }}{{ $t('error.required') }}
     </div>
     <div class="u-mt10">
       <CreatePreBtn
-        create-pre-btn-class="u-d-block u-w5 u-h1 u-m-x-center u-align-center u-text-sz4"
+        btn-class="u-d-block u-w5 u-h1 u-m-x-center u-align-center u-text-sz4"
         @click="createPre"
       ></CreatePreBtn>
     </div>
+    <transition name="dialog">
+      <ErrorMessage v-show="open" :msg="errorMsg" alert-class="u-nv-top70 u-w100"></ErrorMessage>
+    </transition>
   </FormTemplate>
 </template>
 
@@ -50,10 +53,11 @@ import TextEmail from '@/components/atoms/TextEmail.vue'
 import CreatePreBtn from '@/components/molecules/btns/CreatePreBtn.vue'
 import TextPassword from '@/components/atoms/TextPassword.vue'
 import TextPlane from '@/components/atoms/TextPlane.vue'
+import ErrorMessage from '@/components/molecules/dialogs/ErrorMessage.vue'
 
 export default Vue.extend({
   name: 'CreatePrePage',
-  components: { FormTemplate, Label, TextEmail, CreatePreBtn, TextPassword, TextPlane },
+  components: { FormTemplate, Label, TextEmail, CreatePreBtn, TextPassword, TextPlane, ErrorMessage },
   data() {
     return {
       form: {
@@ -61,14 +65,26 @@ export default Vue.extend({
         email: '',
         password: '',
       },
+      open: false,
+      errorMsg: '',
     }
   },
   methods: {
-    createPre() {
+    async createPre() {
       this.$v.$touch()
-      // if(!this.$v.$invalid){
-
-      // }
+      if(!this.$v.$invalid){
+        await this.$store.dispatch('users/createPre', { name: this.form.name, email: this.form.email, password: this.form.password })
+        const users = this.$store.state.users.users
+        if (users.success) {
+          console.log(users)
+        } else {
+          this.errorMsg = users.response.msg
+          this.open = true
+        }
+      }else{
+        this.errorMsg = this.$t('error.input')
+        this.open = true
+      }
     },
   },
   validations: {

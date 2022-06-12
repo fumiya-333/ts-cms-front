@@ -2,7 +2,7 @@
   <Btn
     name="password-reset-pre"
     btn-class="u-bg-warning border1 u-text-white"
-    :class="passwordResetPreBtnClass"
+    :class="btnClass"
     @click="$emit('click')"
     >パスワード変更</Btn
   >
@@ -14,7 +14,7 @@ import Btn from '@/components/atoms/Btn'
 export default {
   components: { Btn },
   props: {
-    passwordResetPreBtnClass: {
+    btnClass: {
       type: String,
       default: '',
     },

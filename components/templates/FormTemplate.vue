@@ -3,7 +3,7 @@
     <Header />
     <Contents contents-class="u-w14 u-m-x-center">
       <Main main-class="u-my10">
-        <Form>
+        <Form form-inner-class="u-position-relative">
           <slot></slot>
         </Form>
       </Main>
