@@ -7,7 +7,7 @@
       :value="$v.form.email.$model"
       placeholder="example@example.com"
       @input="$v.form.email.$model = $event"
-    />
+    ></TextEmail>
     <div v-if="$v.form.email.$error && !$v.form.email.required" class="u-mt2 u-text-danger">
       {{ $t('form.email') }}{{ $t('error.required') }}
     </div>
@@ -18,7 +18,7 @@
       name="password"
       :value="$v.form.password.$model"
       @input="$v.form.password.$model = $event"
-    />
+    ></TextPassword>
     <div v-if="$v.form.password.$error && !$v.form.password.required" class="u-mt2 u-text-danger">
       {{ $t('form.password') }}{{ $t('error.required') }}
     </div>
