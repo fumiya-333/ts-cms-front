@@ -82,6 +82,7 @@ export default Vue.extend({
           this.open = true
         }
       }else{
+        // @ts-ignore
         this.errorMsg = this.$t('error.input')
         this.open = true
       }

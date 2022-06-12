@@ -45,7 +45,7 @@ export default {
           { code: 'en', name: 'English', iso: 'en-US', file: 'en.json' },
         ],
         defaultLocale: 'ja',
-        langDir: 'locales/',
+        langDir: 'i18n/',
         strategy: 'prefix_and_default',
         vueI18n: {
           fallbackLocale: 'ja',
