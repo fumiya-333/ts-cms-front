@@ -1,0 +1,15 @@
+.u-flex-end {
+  @include flexbox(nowrap, flex-end, stretch, row nowrap);
+}
+
+.u-d-block {
+  display: block;
+}
+
+.u-d-inline {
+  display: inline;
+}
+
+.u-d-inline-block {
+  display: inline-block;
+}

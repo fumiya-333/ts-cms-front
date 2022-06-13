@@ -1,0 +1,25 @@
+.c-link {
+  color: #0000ee;
+  text-decoration: underline;
+  &:visited {
+    color: #551a8b;
+    text-decoration: underline;
+  }
+  &:active {
+    color: #ff0000;
+    text-decoration: underline;
+  }
+}
+
+.c-link-btn {
+  position: relative;
+  border-radius: 31px;
+  span {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+}

@@ -1,0 +1,37 @@
+.u-m-x-center {
+  margin: 0 auto;
+}
+
+.u-m-y-center {
+  margin: auto 0;
+}
+
+.u-m-center {
+  margin: auto;
+}
+
+@for $i from 0 through 100 {
+  .u-mt#{$i} {
+    margin-top: #{$i * 8}px;
+  }
+  .u-mb#{$i} {
+    margin-bottom: #{$i * 8}px;
+  }
+  .u-ml#{$i} {
+    margin-left: #{$i * 8}px;
+  }
+  .u-mr#{$i} {
+    margin-right: #{$i * 8}px;
+  }
+  .u-mx#{$i} {
+    margin-right: #{$i * 8}px;
+    margin-left: #{$i * 8}px;
+  }
+  .u-my#{$i} {
+    margin-top: #{$i * 8}px;
+    margin-bottom: #{$i * 8}px;
+  }
+  .u-m#{$i} {
+    margin: #{$i * 8}px;
+  }
+}
