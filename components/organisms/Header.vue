@@ -1,14 +1,15 @@
 <template>
   <header class="l-header u-fadein">
     <div class="l-header__inner">
-      <TitleH1></TitleH1>
+      <H1 href="/">{{ $t('title') }}</H1>
     </div>
   </header>
 </template>
 
 <script>
-import TitleH1 from '@/components/molecules/headings/TitleH1'
+import H1 from '@/components/atoms/H1'
+
 export default {
-  components: { TitleH1 },
+  components: { H1 },
 }
 </script>
