@@ -24,10 +24,16 @@
     </div>
     <Link href="passwordResetPre" class-name="u-flex-end u-mt3">パスワードを忘れた</Link>
     <div class="u-mt10">
-      <LoginBtn class-name="u-d-block u-w5 u-h1 u-m-x-center u-align-center u-text-sz4" @click="login"></LoginBtn>
-      <CreateLinkBtn class-name="u-d-block u-w5 u-h1 u-mt2 u-m-x-center u-align-center u-text-sz4"></CreateLinkBtn>
+      <BtnPrimary name="login" class-name="u-d-block u-w5 u-h1 u-m-x-center u-align-center u-text-sz4" @click="login"
+        >ログイン</BtnPrimary
+      >
+      <LinkBtnWarning
+        href-name="/createPre"
+        class-name="u-d-block u-w5 u-h1 u-mt2 u-m-x-center u-align-center u-text-sz4"
+        >新規登録</LinkBtnWarning
+      >
     </div>
-    <AlertError ref="alertError" class-name="u-nv-top70 u-w100"></AlertError>
+    <AlertDanger ref="alertDanger" class-name="u-nv-top70 u-w100"></AlertDanger>
   </FormTemplate>
 </template>
 
@@ -39,12 +45,12 @@ import Label from '@/components/atoms/Label'
 import TextEmail from '@/components/atoms/TextEmail'
 import TextPassword from '@/components/atoms/TextPassword'
 import Link from '@/components/atoms/Link'
-import LoginBtn from '@/components/molecules/btns/LoginBtn'
-import CreateLinkBtn from '@/components/molecules/btns/CreateLinkBtn'
-import AlertError from '@/components/molecules/dialogs/AlertError'
+import BtnPrimary from '@/components/atoms/BtnPrimary'
+import LinkBtnWarning from '@/components/atoms/LinkBtnWarning'
+import AlertDanger from '@/components/molecules/dialogs/AlertDanger'
 
 export default {
-  components: { FormTemplate, Label, TextEmail, TextPassword, Link, LoginBtn, CreateLinkBtn, AlertError },
+  components: { FormTemplate, Label, TextEmail, TextPassword, Link, BtnPrimary, LinkBtnWarning, AlertDanger },
   data() {
     return {
       form: {
@@ -82,7 +88,7 @@ export default {
       }
     },
     alertShow(msg) {
-      this.$refs.alertError.show(msg)
+      this.$refs.alertDanger.show(msg)
     },
   },
   validations: {

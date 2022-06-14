@@ -33,12 +33,14 @@
       {{ $t('form.password') }}{{ $t('error.required') }}
     </div>
     <div class="u-mt10">
-      <CreatePreBtn
+      <BtnWarning
+        name="createPre"
         class-name="u-d-block u-w5 u-h1 u-m-x-center u-align-center u-text-sz4"
         @click="createPre"
-      ></CreatePreBtn>
+        >新規登録</BtnWarning
+      >
     </div>
-    <AlertError ref="alertError" class-name="u-nv-top70 u-w100"></AlertError>
+    <AlertDanger ref="alertDanger" class-name="u-nv-top70 u-w100"></AlertDanger>
   </FormTemplate>
 </template>
 
@@ -47,13 +49,13 @@ import { required, email } from 'vuelidate/lib/validators'
 import FormTemplate from '@/components/templates/FormTemplate'
 import Label from '@/components/atoms/Label'
 import TextEmail from '@/components/atoms/TextEmail'
-import CreatePreBtn from '@/components/molecules/btns/CreatePreBtn'
+import BtnWarning from '@/components/atoms/BtnWarning'
 import TextPassword from '@/components/atoms/TextPassword'
 import TextPlane from '@/components/atoms/TextPlane'
-import AlertError from '@/components/molecules/dialogs/AlertError'
+import AlertDanger from '@/components/molecules/dialogs/AlertDanger'
 
 export default {
-  components: { FormTemplate, Label, TextEmail, CreatePreBtn, TextPassword, TextPlane, AlertError },
+  components: { FormTemplate, Label, TextEmail, BtnWarning, TextPassword, TextPlane, AlertDanger },
   data() {
     return {
       form: {
@@ -90,7 +92,7 @@ export default {
       }
     },
     alertShow(msg) {
-      this.$refs.alertError.show(msg)
+      this.$refs.alertDanger.show(msg)
     },
   },
   validations: {

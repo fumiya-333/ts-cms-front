@@ -1,21 +1,22 @@
 <template>
   <transition name="u-dialog">
-    <div
+    <Box
       v-show="open"
-      class="u-d-flex u-position-absolute u-p2 u-mr2 u-line-height15 u-text-sz3 u-rounded2"
+      class-name="u-d-flex u-position-absolute u-p2 u-mr2 u-line-height15 u-text-sz3 u-rounded2"
       :class="className"
     >
       <slot></slot>
       <Btn class="c-close u-ml-auto" @click="close"></Btn>
-    </div>
+    </Box>
   </transition>
 </template>
 
 <script>
 import Btn from '@/components/atoms/Btn'
+import Box from '@/components/atoms/Box'
 
 export default {
-  components: { Btn },
+  components: { Btn, Box },
   props: {
     className: {
       type: String,

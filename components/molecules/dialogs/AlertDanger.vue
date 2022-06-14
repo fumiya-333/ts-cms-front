@@ -1,14 +1,14 @@
 <template>
-  <AlertDanger ref="alertDanger" class-name="u-bg-danger u-text-white" :class="className">
+  <Alert ref="alert" class-name="u-bg-danger u-text-white" :class="className">
     {{ msg }}
-  </AlertDanger>
+  </Alert>
 </template>
 
 <script>
-import AlertDanger from '@/components/atoms/AlertDanger'
+import Alert from '@/components/molecules/dialogs/Alert'
 
 export default {
-  components: { AlertDanger },
+  components: { Alert },
   props: {
     className: {
       type: String,
@@ -23,7 +23,7 @@ export default {
   methods: {
     show(msg) {
       this.msg = msg
-      this.$refs.alertDanger.show()
+      this.$refs.alert.show()
     },
   },
 }

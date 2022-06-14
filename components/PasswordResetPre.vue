@@ -13,10 +13,12 @@
     </div>
     <div v-if="$v.form.email.$error && !$v.form.email.email" class="u-mt2 u-text-danger">{{ $t('error.email') }}</div>
     <div class="u-mt10">
-      <PasswordResetPreBtn
+      <BtnWarning
+        name="passwordResetPre"
         class-name="u-d-block u-w5 u-h1 u-m-x-center u-align-center u-text-sz4"
         @click="passwordReset"
-      ></PasswordResetPreBtn>
+        >パスワード変更</BtnWarning
+      >
     </div>
   </FormTemplate>
 </template>
@@ -26,10 +28,10 @@ import { required, email } from 'vuelidate/lib/validators'
 import FormTemplate from '@/components/templates/FormTemplate'
 import Label from '@/components/atoms/Label'
 import TextEmail from '@/components/atoms/TextEmail'
-import PasswordResetPreBtn from '@/components/molecules/btns/PasswordResetPreBtn'
+import BtnWarning from '@/components/atoms/BtnWarning'
 
 export default {
-  components: { FormTemplate, Label, TextEmail, PasswordResetPreBtn },
+  components: { FormTemplate, Label, TextEmail, BtnWarning },
   data() {
     return {
       form: {
