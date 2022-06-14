@@ -1,5 +1,5 @@
 <template>
-  <main class="l-main" :class="mainClass">
+  <main class="l-main" :class="className">
     <slot></slot>
   </main>
 </template>
@@ -7,7 +7,7 @@
 <script>
 export default {
   props: {
-    mainClass: {
+    className: {
       type: String,
       default: '',
     },

@@ -1,9 +1,9 @@
 <template>
   <Wrapper>
     <Header />
-    <Contents contents-class="u-w14 u-m-x-center">
-      <Main main-class="u-my10">
-        <Form form-inner-class="u-position-relative">
+    <Contents class-name="u-w14 u-m-x-center">
+      <Main class-name="u-my10">
+        <Form class-name-inner="u-position-relative">
           <slot></slot>
         </Form>
       </Main>

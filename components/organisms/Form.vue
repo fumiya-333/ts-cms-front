@@ -1,6 +1,6 @@
 <template>
-  <form class="u-fadein" :class="formClass">
-    <div :class="formInnerClass">
+  <form class="u-fadein" :class="className">
+    <div :class="classNameInner">
       <slot></slot>
     </div>
   </form>
@@ -9,11 +9,11 @@
 <script>
 export default {
   props: {
-    formClass: {
+    className: {
       type: String,
       default: '',
     },
-    formInnerClass: {
+    classNameInner: {
       type: String,
       default: '',
     },

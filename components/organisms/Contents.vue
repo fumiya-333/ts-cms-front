@@ -1,5 +1,5 @@
 <template>
-  <section class="l-contents" :class="contentsClass">
+  <section class="l-contents" :class="className">
     <slot></slot>
   </section>
 </template>
@@ -7,7 +7,7 @@
 <script>
 export default {
   props: {
-    contentsClass: {
+    className: {
       type: String,
       default: '',
     },
