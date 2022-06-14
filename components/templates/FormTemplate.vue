@@ -1,6 +1,6 @@
 <template>
   <Wrapper>
-    <Header />
+    <Header></Header>
     <Contents class-name="u-w14 u-m-x-center">
       <Main class-name="u-my10">
         <Form class-name-inner="u-position-relative">
@@ -8,10 +8,10 @@
         </Form>
       </Main>
     </Contents>
+    <Footer></Footer>
     <portal to="alertDanger">
       <AlertDanger ref="alertDanger" class-name="u-nv-top70 u-w100"></AlertDanger>
     </portal>
-    <Footer />
   </Wrapper>
 </template>
 
