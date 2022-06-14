@@ -1,5 +1,5 @@
 <template>
-  <a class="c-link-btn" :class="linkBtnClass" @click="$emit('click')"
+  <a class="c-link-btn" :class="className" @click="$emit('click')"
     ><span><slot></slot></span
   ></a>
 </template>
@@ -7,7 +7,7 @@
 <script>
 export default {
   props: {
-    linkBtnClass: {
+    className: {
       type: String,
       default: '',
     },

@@ -1,6 +1,6 @@
 <template>
   <h1>
-    <a :href="href" :class="btnClass"><slot></slot></a>
+    <a :href="href" :class="className"><slot></slot></a>
   </h1>
 </template>
 
@@ -11,7 +11,7 @@ export default {
       type: String,
       default: '',
     },
-    btnClass: {
+    className: {
       type: String,
       default: '',
     },

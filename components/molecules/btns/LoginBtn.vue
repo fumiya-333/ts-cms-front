@@ -1,5 +1,5 @@
 <template>
-  <Btn name="login" btn-class="u-bg-primary border1 u-text-white" :class="btnClass" @click="$emit('click')"
+  <Btn name="login" class-name="u-bg-primary border1 u-text-white" :class="className" @click="$emit('click')"
     >ログイン</Btn
   >
 </template>
@@ -10,7 +10,7 @@ import Btn from '@/components/atoms/Btn'
 export default {
   components: { Btn },
   props: {
-    btnClass: {
+    className: {
       type: String,
       default: '',
     },

@@ -1,11 +1,11 @@
 <template>
-  <div :class="boxClass"><slot></slot></div>
+  <div :class="className"><slot></slot></div>
 </template>
 
 <script>
 export default {
   props: {
-    boxClass: {
+    className: {
       type: String,
       default: '',
     },

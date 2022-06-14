@@ -22,11 +22,5 @@ import Form from '@/components/organisms/Form'
 
 export default {
   components: { Header, Footer, Wrapper, Contents, Main, Form },
-  props: {
-    open: {
-      type: Boolean,
-      default: false,
-    },
-  },
 }
 </script>

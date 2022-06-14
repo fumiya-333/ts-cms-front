@@ -1,9 +1,9 @@
 <template>
   <LinkBtn
     name="create"
-    href="/create-pre"
-    link-btn-class="u-bg-warning border1 u-text-white"
-    :class="linkBtnClass"
+    href="/createPre"
+    class-name="u-bg-warning border1 u-text-white"
+    :class="className"
     @click="$emit('click')"
     >新規登録</LinkBtn
   >
@@ -15,7 +15,7 @@ import LinkBtn from '@/components/atoms/LinkBtn'
 export default {
   components: { LinkBtn },
   props: {
-    linkBtnClass: {
+    className: {
       type: String,
       default: '',
     },

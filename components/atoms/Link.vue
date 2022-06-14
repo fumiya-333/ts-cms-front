@@ -1,11 +1,11 @@
 <template>
-  <a class="c-link" :class="hrefClass"><slot></slot></a>
+  <a class="c-link" :class="className"><slot></slot></a>
 </template>
 
 <script>
 export default {
   props: {
-    hrefClass: {
+    className: {
       type: String,
       default: '',
     },

@@ -1,11 +1,12 @@
 <template>
-  <button type="button" class="u-rounded8" :class="btnClass" @click="$emit('click')"><slot></slot></button>
+  <button type="button" class="u-rounded8" :class="className" @click="$emit('click')"><slot></slot></button>
 </template>
 
 <script>
+
 export default {
   props: {
-    btnClass: {
+    className: {
       type: String,
       default: '',
     },

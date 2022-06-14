@@ -1,5 +1,5 @@
 <template>
-  <form class="m-fadein" :class="formClass">
+  <form class="u-fadein" :class="formClass">
     <div :class="formInnerClass">
       <slot></slot>
     </div>

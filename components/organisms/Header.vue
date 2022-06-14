@@ -1,5 +1,5 @@
 <template>
-  <header class="l-header m-fadein">
+  <header class="l-header u-fadein">
     <div class="l-header__inner">
       <TitleH1></TitleH1>
     </div>

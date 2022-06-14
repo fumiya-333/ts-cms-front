@@ -1,18 +1,18 @@
-.m-fadein {
+.u-fadein {
   animation: fadein 2s ease 0s 1 normal;
 }
 
-.m-fadeout {
+.u-fadeout {
   animation: fadeout 2s ease 0s 1 forwards;
 }
 
-.dialog-enter-active,
-.dialog-leave-active {
+.u-dialog-enter-active,
+.u-dialog-leave-active {
   transition: opacity 0.5s;
 }
 
-.dialog-enter,
-.dialog-leave-active {
+.u-dialog-enter,
+.u-dialog-leave-active {
   opacity: 0;
 }
 

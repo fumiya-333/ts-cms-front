@@ -10,6 +10,22 @@
   margin: auto;
 }
 
+.u-mt-auto {
+  margin-top: auto;
+}
+
+.u-mr-auto {
+  margin-right: auto;
+}
+
+.u-mb-auto {
+  margin-bottom: auto;
+}
+
+.u-ml-auto {
+  margin-left: auto;
+}
+
 @for $i from 0 through 100 {
   .u-mt#{$i} {
     margin-top: #{$i * 8}px;

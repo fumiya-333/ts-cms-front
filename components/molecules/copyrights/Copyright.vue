@@ -1,5 +1,5 @@
 <template>
-  <Box box-class="u-text-sz3 u-text-w7"> © {{ year }} {{ $t('title') }}. </Box>
+  <Box class-name="u-text-sz3 u-text-w7"> © {{ year }} {{ $t('title') }}. </Box>
 </template>
 
 <script>

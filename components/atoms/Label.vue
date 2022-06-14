@@ -1,11 +1,11 @@
 <template>
-  <label :class="labelClass"><slot></slot></label>
+  <label :class="className"><slot></slot></label>
 </template>
 
 <script>
 export default {
   props: {
-    labelClass: {
+    className: {
       type: String,
       default: '',
     },

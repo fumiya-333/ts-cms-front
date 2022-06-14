@@ -1,5 +1,5 @@
 <template>
-  <Btn name="password-reset-pre" btn-class="u-bg-warning border1 u-text-white" :class="btnClass" @click="$emit('click')"
+  <Btn name="passwordResetPre" class-name="u-bg-warning border1 u-text-white" :class="className" @click="$emit('click')"
     >パスワード変更</Btn
   >
 </template>
@@ -10,7 +10,7 @@ import Btn from '@/components/atoms/Btn'
 export default {
   components: { Btn },
   props: {
-    btnClass: {
+    className: {
       type: String,
       default: '',
     },

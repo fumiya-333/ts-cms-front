@@ -1,8 +1,8 @@
 <template>
   <FormTemplate>
-    <Label label-class="u-d-block">{{ $t('form.name') }}</Label>
+    <Label class-name="u-d-block">{{ $t('form.name') }}</Label>
     <TextPlane
-      text-class="u-d-block u-px2 u-py1 u-mt2 u-text-sz4"
+      class-name="u-d-block u-px2 u-py1 u-mt2 u-text-sz4"
       :value="$v.form.name.$model"
       placeholder="浦島 太郎"
       @input="$v.form.name.$model = $event"
@@ -10,9 +10,9 @@
     <div v-if="$v.form.name.$error && !$v.form.name.required" class="u-mt2 u-text-danger">
       {{ $t('form.name') }}{{ $t('error.required') }}
     </div>
-    <Label label-class="u-d-block u-mt3">{{ $t('form.email') }}</Label>
+    <Label class-name="u-d-block u-mt3">{{ $t('form.email') }}</Label>
     <TextEmail
-      text-class="u-d-block u-px2 u-py1 u-mt2 u-text-sz4"
+      class-name="u-d-block u-px2 u-py1 u-mt2 u-text-sz4"
       name="email"
       :value="$v.form.email.$model"
       placeholder="example@example.com"
@@ -22,9 +22,9 @@
       {{ $t('form.email') }}{{ $t('error.required') }}
     </div>
     <div v-if="$v.form.email.$error && !$v.form.email.email" class="u-mt2 u-text-danger">{{ $t('error.email') }}</div>
-    <Label label-class="u-d-block u-mt3">{{ $t('form.password') }}</Label>
+    <Label class-name="u-d-block u-mt3">{{ $t('form.password') }}</Label>
     <TextPassword
-      text-class="u-d-block u-px2 u-py1 u-mt2 u-text-sz4"
+      class-name="u-d-block u-px2 u-py1 u-mt2 u-text-sz4"
       name="password"
       :value="$v.form.password.$model"
       @input="$v.form.password.$model = $event"
@@ -34,13 +34,11 @@
     </div>
     <div class="u-mt10">
       <CreatePreBtn
-        btn-class="u-d-block u-w5 u-h1 u-m-x-center u-align-center u-text-sz4"
+        class-name="u-d-block u-w5 u-h1 u-m-x-center u-align-center u-text-sz4"
         @click="createPre"
       ></CreatePreBtn>
     </div>
-    <transition name="dialog">
-      <ErrorMessage v-show="open" :msg="errorMsg" alert-class="u-nv-top70 u-w100"></ErrorMessage>
-    </transition>
+    <AlertError ref="alertError" class-name="u-nv-top70 u-w100"></AlertError>
   </FormTemplate>
 </template>
 
@@ -52,10 +50,10 @@ import TextEmail from '@/components/atoms/TextEmail'
 import CreatePreBtn from '@/components/molecules/btns/CreatePreBtn'
 import TextPassword from '@/components/atoms/TextPassword'
 import TextPlane from '@/components/atoms/TextPlane'
-import ErrorMessage from '@/components/molecules/dialogs/ErrorMessage'
+import AlertError from '@/components/molecules/dialogs/AlertError'
 
 export default {
-  components: { FormTemplate, Label, TextEmail, CreatePreBtn, TextPassword, TextPlane, ErrorMessage },
+  components: { FormTemplate, Label, TextEmail, CreatePreBtn, TextPassword, TextPlane, AlertError },
   data() {
     return {
       form: {
@@ -63,8 +61,6 @@ export default {
         email: '',
         password: '',
       },
-      open: false,
-      errorMsg: '',
     }
   },
   methods: {
@@ -79,12 +75,10 @@ export default {
         if (response) {
           this.execCreatePre()
         } else {
-          this.errorMsg = this.$t('error.api')
-          this.open = true
+          this.alertShow(this.$t('error.api'))
         }
       } else {
-        this.errorMsg = this.$t('error.input')
-        this.open = true
+        this.alertShow(this.$t('error.input'))
       }
     },
     execCreatePre() {
@@ -92,9 +86,11 @@ export default {
       if (users.success) {
         console.log(users)
       } else {
-        this.errorMsg = users.response.msg
-        this.open = true
+        this.alertShow(users.response.msg)
       }
+    },
+    alertShow(msg) {
+      this.$refs.alertError.show(msg)
     },
   },
   validations: {
