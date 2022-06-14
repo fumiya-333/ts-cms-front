@@ -1,5 +1,5 @@
 <template>
-  <FormTemplate>
+  <FormTemplate ref="formTemplate">
     <Label class-name="u-d-block">{{ $t('form.email') }}</Label>
     <TextEmail
       class-name="u-d-block u-px2 u-py1 u-mt2 u-text-sz4"
@@ -33,7 +33,7 @@
         >新規登録</LinkBtnWarning
       >
     </div>
-    <AlertDanger ref="alertDanger" class-name="u-nv-top70 u-w100"></AlertDanger>
+    <portal-target name="alertDanger"></portal-target>
   </FormTemplate>
 </template>
 
@@ -47,10 +47,9 @@ import TextPassword from '@/components/atoms/TextPassword'
 import Link from '@/components/atoms/Link'
 import BtnPrimary from '@/components/atoms/BtnPrimary'
 import LinkBtnWarning from '@/components/atoms/LinkBtnWarning'
-import AlertDanger from '@/components/molecules/dialogs/AlertDanger'
 
 export default {
-  components: { FormTemplate, Label, TextEmail, TextPassword, Link, BtnPrimary, LinkBtnWarning, AlertDanger },
+  components: { FormTemplate, Label, TextEmail, TextPassword, Link, BtnPrimary, LinkBtnWarning },
   data() {
     return {
       form: {
@@ -73,10 +72,10 @@ export default {
         if (response) {
           this.execLogin()
         } else {
-          this.alertShow(this.$t('error.api'))
+          this.$refs.formTemplate.alertDangerShow(this.$t('error.api'))
         }
       } else {
-        this.alertShow(this.$t('error.input'))
+        this.$refs.formTemplate.alertDangerShow(this.$t('error.input'))
       }
     },
     execLogin() {
@@ -84,11 +83,8 @@ export default {
       if (users.success) {
         console.log(users)
       } else {
-        this.alertShow(users.response.msg)
+        this.$refs.formTemplate.alertDangerShow(users.response.msg)
       }
-    },
-    alertShow(msg) {
-      this.$refs.alertDanger.show(msg)
     },
   },
   validations: {
