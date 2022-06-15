@@ -1,5 +1,15 @@
 <template>
   <FormTemplate ref="formTemplate">
+    <Label class-name="u-d-block">{{ $t('form.name') }}</Label>
+    <TextPlane
+      class-name="u-d-block u-px2 u-py1 u-mt2 u-text-sz4"
+      :value="$v.form.name.$model"
+      placeholder="浦島 太郎"
+      @input="$v.form.name.$model = $event"
+    ></TextPlane>
+    <div v-if="$v.form.name.$error && !$v.form.name.required" class="u-mt2 u-text-danger">
+      {{ $t('form.name') }}{{ $t('error.required') }}
+    </div>
     <Label class-name="u-d-block u-mt3">{{ $t('form.email') }}</Label>
     <TextEmail
       class-name="u-d-block u-px2 u-py1 u-mt2 u-text-sz4"
@@ -12,6 +22,29 @@
       {{ $t('form.email') }}{{ $t('error.required') }}
     </div>
     <div v-if="$v.form.email.$error && !$v.form.email.email" class="u-mt2 u-text-danger">{{ $t('error.email') }}</div>
+    <Label class-name="u-d-block u-mt3">{{ $t('form.password') }}</Label>
+    <TextPassword
+      class-name="u-d-block u-px2 u-py1 u-mt2 u-text-sz4"
+      name="password"
+      :value="$v.form.password.$model"
+      @input="$v.form.password.$model = $event"
+    ></TextPassword>
+    <div v-if="$v.form.password.$error && !$v.form.password.required" class="u-mt2 u-text-danger">
+      {{ $t('form.password') }}{{ $t('error.required') }}
+    </div>
+    <Label class-name="u-d-block u-mt3">{{ $t('form.passwordConfirm') }}</Label>
+    <TextPassword
+      class-name="u-d-block u-px2 u-py1 u-mt2 u-text-sz4"
+      name="password"
+      :value="$v.form.passwordConfirm.$model"
+      @input="$v.form.passwordConfirm.$model = $event"
+    ></TextPassword>
+    <div v-if="$v.form.passwordConfirm.$error && !$v.form.passwordConfirm.required" class="u-mt2 u-text-danger">
+      {{ $t('form.passwordConfirm') }}{{ $t('error.required') }}
+    </div>
+    <div v-if="$v.form.passwordConfirm.$error && !$v.form.passwordConfirm.sameAsPassword" class="u-mt2 u-text-danger">
+      {{ $t('form.password') }}と{{ $t('form.passwordConfirm') }}{{ $t('error.sameAs') }}
+    </div>
     <div class="u-mt10">
       <BtnWarning
         name="createPre"
@@ -27,19 +60,24 @@
 </template>
 
 <script>
-import { required, email } from 'vuelidate/lib/validators'
+import { required, email, sameAs } from 'vuelidate/lib/validators'
 import FormTemplate from '@/components/templates/FormTemplate'
 import Label from '@/components/atoms/Label'
 import TextEmail from '@/components/atoms/TextEmail'
 import BtnWarning from '@/components/atoms/BtnWarning'
+import TextPassword from '@/components/atoms/TextPassword'
+import TextPlane from '@/components/atoms/TextPlane'
 import AlertDanger from '@/components/molecules/dialogs/AlertDanger'
 
 export default {
-  components: { FormTemplate, Label, TextEmail, BtnWarning, AlertDanger },
+  components: { FormTemplate, Label, TextEmail, BtnWarning, TextPassword, TextPlane, AlertDanger },
   data() {
     return {
       form: {
+        name: '',
         email: '',
+        password: '',
+        passwordConfirm: '',
       },
     }
   },
@@ -48,7 +86,10 @@ export default {
       this.$v.$touch()
       if (!this.$v.$invalid) {
         const response = await this.$store.dispatch('users/createPre', {
+          name: this.form.name,
           email: this.form.email,
+          password: this.form.password,
+          passwordConfirm: this.form.passwordConfirm,
         })
         if (response) {
           this.execCreatePre()
@@ -73,7 +114,10 @@ export default {
   },
   validations: {
     form: {
+      name: { required },
       email: { required, email },
+      password: { required },
+      passwordConfirm: { required, sameAsPassword: sameAs('password') },
     },
   },
 }
