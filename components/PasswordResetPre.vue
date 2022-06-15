@@ -21,7 +21,7 @@
       >
     </div>
     <portal to="alertDanger">
-      <AlertDanger ref="alertDanger" class-name="u-top70 u-right-percent5"></AlertDanger>
+      <AlertDanger ref="alertDanger" :class-name="`u-top70 ${$device.isMobile ? 'u-ml2 u-left' : 'u-right-percent5'}`"></AlertDanger>
     </portal>
   </FormTemplate>
 </template>
