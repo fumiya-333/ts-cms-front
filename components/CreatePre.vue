@@ -35,12 +35,14 @@
     <div class="u-mt10">
       <BtnWarning
         name="createPre"
-        class-name="u-d-block u-w5 u-h1 u-m-x-center u-align-center u-text-sz4"
+        class-name="u-d-block u-w5 u-h1 u-mx-auto u-align-center u-text-sz4"
         @click="createPre"
         >新規登録</BtnWarning
       >
     </div>
-    <portal-target name="alertDanger"></portal-target>
+    <portal to="alertDanger">
+      <AlertDanger ref="alertDanger" class-name="u-top70 u-right-percent5"></AlertDanger>
+    </portal>
   </FormTemplate>
 </template>
 
@@ -52,9 +54,10 @@ import TextEmail from '@/components/atoms/TextEmail'
 import BtnWarning from '@/components/atoms/BtnWarning'
 import TextPassword from '@/components/atoms/TextPassword'
 import TextPlane from '@/components/atoms/TextPlane'
+import AlertDanger from '@/components/molecules/dialogs/AlertDanger'
 
 export default {
-  components: { FormTemplate, Label, TextEmail, BtnWarning, TextPassword, TextPlane },
+  components: { FormTemplate, Label, TextEmail, BtnWarning, TextPassword, TextPlane, AlertDanger },
   data() {
     return {
       form: {
@@ -76,19 +79,22 @@ export default {
         if (response) {
           this.execCreatePre()
         } else {
-          this.$refs.formTemplate.alertDangerShow(this.$t('error.api'))
+          this.alertDangerShow(this.$t('error.api'))
         }
       } else {
-        this.$refs.formTemplate.alertDangerShow(this.$t('error.input'))
+        this.alertDangerShow(this.$t('error.input'))
       }
     },
     execCreatePre() {
       const users = this.$store.state.users.users
-      if (users.success) {
+      if (users && users.success) {
         console.log(users)
       } else {
-        this.$refs.formTemplate.alertDangerShow(users.response.msg)
+        this.alertDangerShow(users.response.msg)
       }
+    },
+    alertDangerShow(msg) {
+      this.$refs.alertDanger.show(msg)
     },
   },
   validations: {

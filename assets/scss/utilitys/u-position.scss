@@ -35,4 +35,30 @@
   .u-nv-left#{$i} {
     left: #{$i * -1}px;
   }
+  @if $i % 10 == 0 {
+    .u-top-percent#{$i * 0.1} {
+      top: #{percentage($i * 0.01)};
+    }
+    .u-right-percent#{$i * 0.1} {
+      right: #{percentage($i * 0.01)};
+    }
+    .u-bottom-percent#{$i * 0.1} {
+      bottom: #{percentage($i * 0.01)};
+    }
+    .u-left-percent#{$i * 0.1} {
+      left: #{percentage($i * 0.01)};
+    }
+    .u-nv-top-percent#{$i * 0.1} {
+      top: #{percentage($i * -0.01)};
+    }
+    .u-nv-right-percent#{$i * 0.1} {
+      right: #{percentage($i * -0.01)};
+    }
+    .u-nv-bottom-percent#{$i * 0.1} {
+      bottom: #{percentage($i * -0.01)};
+    }
+    .u-nv-left-percent#{$i * 0.1} {
+      left: #{percentage($i * -0.01)};
+    }
+  }
 }

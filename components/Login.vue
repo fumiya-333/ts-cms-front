@@ -24,16 +24,18 @@
     </div>
     <Link href="passwordResetPre" class-name="u-flex-end u-mt3">パスワードを忘れた</Link>
     <div class="u-mt10">
-      <BtnPrimary name="login" class-name="u-d-block u-w5 u-h1 u-m-x-center u-align-center u-text-sz4" @click="login"
+      <BtnPrimary name="login" class-name="u-d-block u-w5 u-h1 u-mx-auto u-align-center u-text-sz4" @click="login"
         >ログイン</BtnPrimary
       >
       <LinkBtnWarning
         href-name="/createPre"
-        class-name="u-d-block u-w5 u-h1 u-mt2 u-m-x-center u-align-center u-text-sz4"
+        class-name="u-d-block u-w5 u-h1 u-mt2 u-mx-auto u-align-center u-text-sz4"
         >新規登録</LinkBtnWarning
       >
     </div>
-    <portal-target name="alertDanger"></portal-target>
+    <portal to="alertDanger">
+      <AlertDanger ref="alertDanger" class-name="u-top70 u-right-percent5"></AlertDanger>
+    </portal>
   </FormTemplate>
 </template>
 
@@ -47,9 +49,10 @@ import TextPassword from '@/components/atoms/TextPassword'
 import Link from '@/components/atoms/Link'
 import BtnPrimary from '@/components/atoms/BtnPrimary'
 import LinkBtnWarning from '@/components/atoms/LinkBtnWarning'
+import AlertDanger from '@/components/molecules/dialogs/AlertDanger'
 
 export default {
-  components: { FormTemplate, Label, TextEmail, TextPassword, Link, BtnPrimary, LinkBtnWarning },
+  components: { FormTemplate, Label, TextEmail, TextPassword, Link, BtnPrimary, LinkBtnWarning, AlertDanger },
   data() {
     return {
       form: {
@@ -72,19 +75,22 @@ export default {
         if (response) {
           this.execLogin()
         } else {
-          this.$refs.formTemplate.alertDangerShow(this.$t('error.api'))
+          this.alertDangerShow(this.$t('error.api'))
         }
       } else {
-        this.$refs.formTemplate.alertDangerShow(this.$t('error.input'))
+        this.alertDangerShow(this.$t('error.input'))
       }
     },
     execLogin() {
       const users = this.$store.state.users.users
-      if (users.success) {
+      if (users && users.success) {
         console.log(users)
       } else {
-        this.$refs.formTemplate.alertDangerShow(users.response.msg)
+        this.alertDangerShow(users.response.msg)
       }
+    },
+    alertDangerShow(msg) {
+      this.$refs.alertDanger.show(msg)
     },
   },
   validations: {

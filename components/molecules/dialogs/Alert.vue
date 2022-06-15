@@ -2,11 +2,11 @@
   <transition name="u-dialog">
     <Box
       v-show="open"
-      class-name="u-d-flex u-position-absolute u-p2 u-mr2 u-line-height15 u-text-sz3 u-rounded2"
+      class-name="u-d-flex u-position-absolute u-p2 u-line-height15 u-text-sz3 u-rounded2"
       :class="className"
     >
       <slot></slot>
-      <Btn class="c-close u-ml-auto" @click="close"></Btn>
+      <Btn class="c-close u-ml-auto u-ml4 u-my-auto" @click="close"></Btn>
     </Box>
   </transition>
 </template>
