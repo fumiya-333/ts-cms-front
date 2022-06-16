@@ -1,5 +1,5 @@
 import { GetterTree, ActionTree, MutationTree } from 'vuex'
-import { httpPost } from '@/libs/api-util'
+import { httpGet, httpPost } from '@/libs/api-util'
 
 export const state = () => ({
   users: [],
@@ -17,7 +17,7 @@ export const mutations: MutationTree<RootState> = {
 
 export const actions: ActionTree<RootState, RootState> = {
   async login({ commit }, { email, password }) {
-    return await httpPost('/', { email, password })
+    return await httpPost('/users/login', { email, password })
       .then(({ data }) => {
         commit('SET_USERS', { success: data.success, response: data.response })
         return true
@@ -28,6 +28,16 @@ export const actions: ActionTree<RootState, RootState> = {
   },
   async createPre({ commit }, { name, email, password }) {
     return await httpPost('/users/createPre', { name, email, password })
+      .then(({ data }) => {
+        commit('SET_USERS', { success: data.success, response: data.response })
+        return true
+      })
+      .catch(() => {
+        return false
+      })
+  },
+  async createFetch({ commit }, { emailVerifyToken }) {
+    return await httpGet(`/users/create/${emailVerifyToken}`, {})
       .then(({ data }) => {
         commit('SET_USERS', { success: data.success, response: data.response })
         return true

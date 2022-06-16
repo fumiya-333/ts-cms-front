@@ -27,14 +27,15 @@
       <BtnPrimary name="login" class-name="u-d-block u-w5 u-h1 u-mx-auto u-align-center u-text-sz4" @click="login"
         >ログイン</BtnPrimary
       >
-      <LinkBtnWarning
-        href-name="/createPre"
-        class-name="u-d-block u-w5 u-h1 u-mt2 u-mx-auto u-align-center u-text-sz4"
+      <LinkBtnWarning href-name="/createPre" class-name="u-d-block u-w5 u-h1 u-mt2 u-mx-auto u-align-center u-text-sz4"
         >新規登録</LinkBtnWarning
       >
     </div>
     <portal to="alertDanger">
-      <AlertDanger ref="alertDanger" :class-name="`u-top70 ${$device.isMobile ? 'u-ml2 u-left' : 'u-right-percent5'}`"></AlertDanger>
+      <AlertDanger
+        ref="alertDanger"
+        :class-name="`u-top70 ${$device.isMobile ? 'u-ml2 u-left' : 'u-right-percent5'}`"
+      ></AlertDanger>
     </portal>
   </FormTemplate>
 </template>

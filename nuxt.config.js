@@ -18,6 +18,10 @@ export default {
 
   ssr: true,
 
+  router: {
+    middleware: ['router'],
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [{ src: '@/assets/scss/style.scss' }],
 

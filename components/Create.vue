@@ -10,18 +10,6 @@
     <div v-if="$v.form.name.$error && !$v.form.name.required" class="u-mt2 u-text-danger">
       {{ $t('form.name') }}{{ $t('error.required') }}
     </div>
-    <Label class-name="u-d-block u-mt3">{{ $t('form.email') }}</Label>
-    <TextEmail
-      class-name="u-d-block u-px2 u-py1 u-mt2 u-text-sz4"
-      name="email"
-      :value="$v.form.email.$model"
-      placeholder="example@example.com"
-      @input="$v.form.email.$model = $event"
-    ></TextEmail>
-    <div v-if="$v.form.email.$error && !$v.form.email.required" class="u-mt2 u-text-danger">
-      {{ $t('form.email') }}{{ $t('error.required') }}
-    </div>
-    <div v-if="$v.form.email.$error && !$v.form.email.email" class="u-mt2 u-text-danger">{{ $t('error.email') }}</div>
     <Label class-name="u-d-block u-mt3">{{ $t('form.password') }}</Label>
     <TextPassword
       class-name="u-d-block u-px2 u-py1 u-mt2 u-text-sz4"
@@ -54,28 +42,29 @@
       >
     </div>
     <portal to="alertDanger">
-      <AlertDanger ref="alertDanger" :class-name="`u-top70 ${$device.isMobile ? 'u-ml2 u-left' : 'u-right-percent5'}`"></AlertDanger>
+      <AlertDanger
+        ref="alertDanger"
+        :class-name="`u-top70 ${$device.isMobile ? 'u-ml2 u-left' : 'u-right-percent5'}`"
+      ></AlertDanger>
     </portal>
   </FormTemplate>
 </template>
 
 <script>
-import { required, email, sameAs } from 'vuelidate/lib/validators'
+import { required, sameAs } from 'vuelidate/lib/validators'
 import FormTemplate from '@/components/templates/FormTemplate'
 import Label from '@/components/atoms/Label'
-import TextEmail from '@/components/atoms/TextEmail'
 import BtnWarning from '@/components/atoms/BtnWarning'
 import TextPassword from '@/components/atoms/TextPassword'
 import TextPlane from '@/components/atoms/TextPlane'
 import AlertDanger from '@/components/molecules/dialogs/AlertDanger'
 
 export default {
-  components: { FormTemplate, Label, TextEmail, BtnWarning, TextPassword, TextPlane, AlertDanger },
+  components: { FormTemplate, Label, BtnWarning, TextPassword, TextPlane, AlertDanger },
   data() {
     return {
       form: {
         name: '',
-        email: '',
         password: '',
         passwordConfirm: '',
       },
@@ -87,7 +76,6 @@ export default {
       if (!this.$v.$invalid) {
         const response = await this.$store.dispatch('users/createPre', {
           name: this.form.name,
-          email: this.form.email,
           password: this.form.password,
           passwordConfirm: this.form.passwordConfirm,
         })
@@ -115,7 +103,6 @@ export default {
   validations: {
     form: {
       name: { required },
-      email: { required, email },
       password: { required },
       passwordConfirm: { required, sameAsPassword: sameAs('password') },
     },
