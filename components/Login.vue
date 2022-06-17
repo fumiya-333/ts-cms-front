@@ -1,5 +1,5 @@
 <template>
-  <FormTemplate ref="formTemplate">
+  <FormTemplate>
     <Label class-name="u-d-block">{{ $t('form.email') }}</Label>
     <TextEmail
       class-name="u-d-block u-px2 u-py1 u-mt2 u-text-sz4"
@@ -31,7 +31,7 @@
         >新規登録</LinkBtnWarning
       >
     </div>
-    <portal to="alertDanger">
+    <portal to="target">
       <AlertDanger
         ref="alertDanger"
         :class-name="`u-top70 ${$device.isMobile ? 'u-ml2 u-left' : 'u-right-percent5'}`"

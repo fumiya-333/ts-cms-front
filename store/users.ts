@@ -26,8 +26,8 @@ export const actions: ActionTree<RootState, RootState> = {
         return false
       })
   },
-  async createPre({ commit }, { name, email, password }) {
-    return await httpPost('/users/createPre', { name, email, password })
+  async createPre({ commit }, { name, email }) {
+    return await httpPost('/users/createPre', { name, email })
       .then(({ data }) => {
         commit('SET_USERS', { success: data.success, response: data.response })
         return true
@@ -36,8 +36,18 @@ export const actions: ActionTree<RootState, RootState> = {
         return false
       })
   },
-  async createFetch({ commit }, { emailVerifyToken }) {
+  async emailVerifyTokenFindUser({ commit }, { emailVerifyToken }) {
     return await httpGet(`/users/create/${emailVerifyToken}`, {})
+      .then(({ data }) => {
+        commit('SET_USERS', { success: data.success, response: data.response })
+        return true
+      })
+      .catch(() => {
+        return false
+      })
+  },
+  async create({ commit }, { email, password }) {
+    return await httpPost('/users/create', { email, password })
       .then(({ data }) => {
         commit('SET_USERS', { success: data.success, response: data.response })
         return true

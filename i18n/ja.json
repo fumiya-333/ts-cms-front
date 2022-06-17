@@ -3,6 +3,7 @@
   "form": {
     "name": "氏名",
     "email": "メールアドレス",
+    "emailConfirm": "メールアドレス（確認）",
     "password": "パスワード",
     "passwordConfirm": "パスワード（確認）"
   },

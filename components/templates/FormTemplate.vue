@@ -9,7 +9,7 @@
       </Main>
     </Contents>
     <Footer></Footer>
-    <portal-target name="alertDanger"></portal-target>
+    <portal-target name="target"></portal-target>
   </Wrapper>
 </template>
 
