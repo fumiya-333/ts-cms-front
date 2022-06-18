@@ -89,6 +89,7 @@ export default {
         if (users && typeof users.response !== 'undefined') {
           if (users.success) {
             this.alertInfoShow(users.response.msg)
+            this.clear()
           } else {
             this.alertDangerShow(users.response.msg)
           }
@@ -99,12 +100,17 @@ export default {
         this.alertDangerShow(this.$t('error.input'))
       }
     },
-
     alertInfoShow(msg) {
       this.$refs.alertInfo.show(msg)
     },
     alertDangerShow(msg) {
       this.$refs.alertDanger.show(msg)
+    },
+    clear() {
+      this.form.name = ''
+      this.form.email = ''
+      this.form.emailConfirm = ''
+      this.$v.$reset()
     },
   },
   validations: {

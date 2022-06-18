@@ -19,7 +19,6 @@ export const actions: ActionTree<RootState, RootState> = {
   async login({ commit }, { email, password }) {
     return await httpPost('/users/login', { email, password })
       .then(({ data }) => {
-        console.log(data)
         commit('SET_USERS', { success: data.success, response: data.response })
         return true
       })
@@ -37,7 +36,7 @@ export const actions: ActionTree<RootState, RootState> = {
         return false
       })
   },
-  async emailVerifyTokenFindUser({ commit }, { emailVerifyToken }) {
+  async createIndex({ commit }, { emailVerifyToken }) {
     return await httpGet(`/users/create/${emailVerifyToken}`, {})
       .then(({ data }) => {
         commit('SET_USERS', { success: data.success, response: data.response })
@@ -49,6 +48,16 @@ export const actions: ActionTree<RootState, RootState> = {
   },
   async create({ commit }, { email, password }) {
     return await httpPost('/users/create', { email, password })
+      .then(({ data }) => {
+        commit('SET_USERS', { success: data.success, response: data.response })
+        return true
+      })
+      .catch(() => {
+        return false
+      })
+  },
+  async passwordResetIndex({ commit }, { passwordResetToken }) {
+    return await httpGet(`/users/passwordReset/${passwordResetToken}`, {})
       .then(({ data }) => {
         commit('SET_USERS', { success: data.success, response: data.response })
         return true

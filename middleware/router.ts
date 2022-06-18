@@ -2,14 +2,25 @@ import { Middleware, Context } from '@nuxt/types'
 
 const router: Middleware = async (_context: Context) => {
   if (_context.route.path === '/create/') {
-    if (!_context.route.query.userId) {
+    if (!_context.route.query.token) {
       return _context.redirect('/')
     }
-    await _context.store.dispatch(`users/emailVerifyTokenFindUser`, { emailVerifyToken: _context.route.query.userId })
+    await _context.store.dispatch(`users/createIndex`, { emailVerifyToken: _context.route.query.token })
     const response = _context.store.state.users.users.response
-    if (!response || Number(response.emailVerified)) {
+    if (!response || response.emailVerified) {
       return _context.redirect('/')
     }
+  }
+  if (_context.route.path === '/passwordReset/') {
+    if (!_context.route.query.token) {
+      return _context.redirect('/')
+    }
+    await _context.store.dispatch(`users/passwordResetIndex`, { passwordResetToken: _context.route.query.token })
+    const response = _context.store.state.users.users.response
+    console.log(response)
+    // if (!response || response.emailPasswordResetVerified) {
+    //   return _context.redirect('/')
+    // }
   }
 }
 
