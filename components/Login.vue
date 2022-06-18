@@ -32,6 +32,10 @@
       >
     </div>
     <portal to="target">
+      <AlertInfo
+        ref="alertInfo"
+        :class-name="`u-top70 ${$device.isMobile ? 'u-ml2 u-left' : 'u-right-percent5'}`"
+      ></AlertInfo>
       <AlertDanger
         ref="alertDanger"
         :class-name="`u-top70 ${$device.isMobile ? 'u-ml2 u-left' : 'u-right-percent5'}`"
@@ -50,10 +54,21 @@ import TextPassword from '@/components/atoms/TextPassword'
 import Link from '@/components/atoms/Link'
 import BtnPrimary from '@/components/atoms/BtnPrimary'
 import LinkBtnWarning from '@/components/atoms/LinkBtnWarning'
+import AlertInfo from '@/components/molecules/dialogs/AlertInfo'
 import AlertDanger from '@/components/molecules/dialogs/AlertDanger'
 
 export default {
-  components: { FormTemplate, Label, TextEmail, TextPassword, Link, BtnPrimary, LinkBtnWarning, AlertDanger },
+  components: {
+    FormTemplate,
+    Label,
+    TextEmail,
+    TextPassword,
+    Link,
+    BtnPrimary,
+    LinkBtnWarning,
+    AlertInfo,
+    AlertDanger,
+  },
   data() {
     return {
       form: {
@@ -65,16 +80,33 @@ export default {
   computed: {
     ...mapGetters(['users']),
   },
+  mounted() {
+    this.$nextTick(() => {
+      const users = this.$store.state.users.users
+      if (users && typeof users.response !== 'undefined') {
+        if (users.success) {
+          this.alertInfoShow(users.response.msg)
+        } else {
+          this.alertDangerShow(users.response.msg)
+        }
+      }
+    })
+  },
   methods: {
     async login() {
       this.$v.$touch()
       if (!this.$v.$invalid) {
-        const response = await this.$store.dispatch('users/login', {
+        await this.$store.dispatch('users/login', {
           email: this.form.email,
           password: this.form.password,
         })
-        if (response) {
-          this.execLogin()
+        const users = this.$store.state.users.users
+        if (users && typeof users.response !== 'undefined') {
+          if (users.success) {
+            console.log(users)
+          } else {
+            this.alertDangerShow(users.response.msg)
+          }
         } else {
           this.alertDangerShow(this.$t('error.api'))
         }
@@ -82,13 +114,8 @@ export default {
         this.alertDangerShow(this.$t('error.input'))
       }
     },
-    execLogin() {
-      const users = this.$store.state.users.users
-      if (users && users.success) {
-        console.log(users)
-      } else {
-        this.alertDangerShow(users.response.msg)
-      }
+    alertInfoShow(msg) {
+      this.$refs.alertInfo.show(msg)
     },
     alertDangerShow(msg) {
       this.$refs.alertDanger.show(msg)

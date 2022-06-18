@@ -36,14 +36,14 @@
       >
     </div>
     <portal to="target">
-      <AlertDanger
-        ref="alertDanger"
-        :class-name="`u-top70 ${$device.isMobile ? 'u-ml2 u-left' : 'u-right-percent5'}`"
-      ></AlertDanger>
       <AlertInfo
         ref="alertInfo"
         :class-name="`u-top70 ${$device.isMobile ? 'u-ml2 u-left' : 'u-right-percent5'}`"
       ></AlertInfo>
+      <AlertDanger
+        ref="alertDanger"
+        :class-name="`u-top70 ${$device.isMobile ? 'u-ml2 u-left' : 'u-right-percent5'}`"
+      ></AlertDanger>
     </portal>
   </FormTemplate>
 </template>
@@ -54,11 +54,11 @@ import FormTemplate from '@/components/templates/FormTemplate'
 import Label from '@/components/atoms/Label'
 import BtnWarning from '@/components/atoms/BtnWarning'
 import TextPassword from '@/components/atoms/TextPassword'
-import AlertDanger from '@/components/molecules/dialogs/AlertDanger'
 import AlertInfo from '@/components/molecules/dialogs/AlertInfo'
+import AlertDanger from '@/components/molecules/dialogs/AlertDanger'
 
 export default {
-  components: { FormTemplate, Label, BtnWarning, TextPassword, AlertDanger, AlertInfo },
+  components: { FormTemplate, Label, BtnWarning, TextPassword, AlertInfo, AlertDanger },
   data() {
     return {
       form: {
@@ -73,12 +73,17 @@ export default {
     async createPre() {
       this.$v.$touch()
       if (!this.$v.$invalid) {
-        const response = await this.$store.dispatch('users/create', {
+        await this.$store.dispatch('users/create', {
           email: this.form.email,
           password: this.form.password,
         })
-        if (response) {
-          this.execCreatePre()
+        const users = this.$store.state.users.users
+        if (users && typeof users.response !== 'undefined') {
+          if (users.success) {
+            this.$router.push({ path: '/' })
+          } else {
+            this.alertDangerShow(users.response.msg)
+          }
         } else {
           this.alertDangerShow(this.$t('error.api'))
         }
@@ -86,19 +91,11 @@ export default {
         this.alertDangerShow(this.$t('error.input'))
       }
     },
-    execCreatePre() {
-      const users = this.$store.state.users.users
-      if (users && users.success) {
-        this.alertInfoShow(users.response.msg)
-      } else {
-        this.alertDangerShow(users.response.msg)
-      }
+    alertInfoShow(msg) {
+      this.$refs.alertInfo.show(msg)
     },
     alertDangerShow(msg) {
       this.$refs.alertDanger.show(msg)
-    },
-    alertInfoShow(msg) {
-      this.$refs.alertInfo.show(msg)
     },
   },
   validations: {

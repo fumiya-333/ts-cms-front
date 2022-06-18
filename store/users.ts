@@ -19,6 +19,7 @@ export const actions: ActionTree<RootState, RootState> = {
   async login({ commit }, { email, password }) {
     return await httpPost('/users/login', { email, password })
       .then(({ data }) => {
+        console.log(data)
         commit('SET_USERS', { success: data.success, response: data.response })
         return true
       })

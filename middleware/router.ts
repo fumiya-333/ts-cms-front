@@ -6,8 +6,8 @@ const router: Middleware = async (_context: Context) => {
       return _context.redirect('/')
     }
     await _context.store.dispatch(`users/emailVerifyTokenFindUser`, { emailVerifyToken: _context.route.query.userId })
-    const users = _context.store.state.users.users
-    if (!users || !users.response || users.email_verified) {
+    const response = _context.store.state.users.users.response
+    if (!response || Number(response.emailVerified)) {
       return _context.redirect('/')
     }
   }
