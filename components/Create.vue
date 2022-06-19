@@ -17,7 +17,7 @@
     <Label class-name="u-d-block u-mt3">{{ $t('form.passwordConfirm') }}</Label>
     <TextPassword
       class-name="u-d-block u-px2 u-py1 u-mt2 u-text-sz4"
-      name="password"
+      name="passwordConfirm"
       :value="$v.form.passwordConfirm.$model"
       @input="$v.form.passwordConfirm.$model = $event"
     ></TextPassword>
@@ -52,13 +52,13 @@
 import { required, sameAs } from 'vuelidate/lib/validators'
 import FormTemplate from '@/components/templates/FormTemplate'
 import Label from '@/components/atoms/Label'
-import BtnWarning from '@/components/atoms/BtnWarning'
 import TextPassword from '@/components/atoms/TextPassword'
+import BtnWarning from '@/components/atoms/BtnWarning'
 import AlertInfo from '@/components/molecules/dialogs/AlertInfo'
 import AlertDanger from '@/components/molecules/dialogs/AlertDanger'
 
 export default {
-  components: { FormTemplate, Label, BtnWarning, TextPassword, AlertInfo, AlertDanger },
+  components: { FormTemplate, Label, TextPassword, BtnWarning, AlertInfo, AlertDanger },
   data() {
     return {
       form: {

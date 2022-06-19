@@ -56,8 +56,28 @@ export const actions: ActionTree<RootState, RootState> = {
         return false
       })
   },
+  async passwordResetPre({ commit }, { email }) {
+    return await httpPost('/users/passwordResetPre', { email })
+      .then(({ data }) => {
+        commit('SET_USERS', { success: data.success, response: data.response })
+        return true
+      })
+      .catch(() => {
+        return false
+      })
+  },
   async passwordResetIndex({ commit }, { passwordResetToken }) {
     return await httpGet(`/users/passwordReset/${passwordResetToken}`, {})
+      .then(({ data }) => {
+        commit('SET_USERS', { success: data.success, response: data.response })
+        return true
+      })
+      .catch(() => {
+        return false
+      })
+  },
+  async passwordReset({ commit }, { email, password }) {
+    return await httpPost('/users/passwordReset', { email, password })
       .then(({ data }) => {
         commit('SET_USERS', { success: data.success, response: data.response })
         return true
