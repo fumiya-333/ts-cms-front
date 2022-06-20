@@ -1,7 +1,7 @@
 <template>
   <header class="l-header u-fadein" :class="className">
     <div class="l-header__inner" :class="classNameInner">
-      <H1 href="/">{{ $t('title') }}</H1>
+      <H1 href="/users/login">{{ $t('title') }}</H1>
     </div>
   </header>
 </template>

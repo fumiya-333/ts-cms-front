@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import Create from '@/components/Create.vue'
+import Create from '@/components/pages/users/Create.vue'
 export default Vue.extend({
   name: 'CreatePage',
   components: { Create },

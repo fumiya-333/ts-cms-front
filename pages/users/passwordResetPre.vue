@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import PasswordResetPre from '@/components/PasswordResetPre.vue'
+import PasswordResetPre from '@/components/pages/users/PasswordResetPre.vue'
 
 export default Vue.extend({
   name: 'PasswordResetPrePage',

@@ -1,7 +1,5 @@
 <template>
   <FormTemplate>
-    <Label class-name="u-d-block u-mt3">{{ $t('form.name') }}</Label>
-    <Label class-name="u-d-block u-ml2 u-mt2">{{ form.name }}</Label>
     <Label class-name="u-d-block u-mt3">{{ $t('form.email') }}</Label>
     <Label class-name="u-d-block u-ml2 u-mt2">{{ form.email }}</Label>
     <Label class-name="u-d-block u-mt3">{{ $t('form.password') }}</Label>
@@ -29,10 +27,10 @@
     </div>
     <div class="u-mt10">
       <BtnWarning
-        name="createPre"
+        name="passwordResetPre"
         class-name="u-d-block u-w5 u-h1 u-mx-auto u-align-center u-text-sz4"
-        @click="createPre"
-        >新規登録</BtnWarning
+        @click="passwordResetPre"
+        >パスワード変更</BtnWarning
       >
     </div>
     <portal to="target">
@@ -63,24 +61,23 @@ export default {
     return {
       form: {
         email: this.$store.state.users.users.response.email,
-        name: this.$store.state.users.users.response.name,
         password: '',
         passwordConfirm: '',
       },
     }
   },
   methods: {
-    async createPre() {
+    async passwordResetPre() {
       this.$v.$touch()
       if (!this.$v.$invalid) {
-        await this.$store.dispatch('users/create', {
+        await this.$store.dispatch('users/passwordReset', {
           email: this.form.email,
           password: this.form.password,
         })
         const users = this.$store.state.users.users
-        if (users && typeof users.response !== 'undefined') {
+        if (users && users.success && typeof users.response !== 'undefined') {
           if (users.success) {
-            this.$router.push({ path: '/' })
+            this.$router.push({ path: '/users/login' })
           } else {
             this.alertDangerShow(users.response.msg)
           }
