@@ -1,13 +1,13 @@
 <template>
-  <Login></Login>
+  <Index></Index>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import Login from '@/components/pages/users/Login.vue'
+import Index from '@/components/pages/Index.vue'
 
 export default Vue.extend({
   name: 'IndexPage',
-  components: { Login },
+  components: { Index },
 })
 </script>

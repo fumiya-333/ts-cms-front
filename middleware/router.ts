@@ -1,7 +1,7 @@
 import { Middleware, Context } from '@nuxt/types'
 
 const router: Middleware = async (_context: Context) => {
-  if ( _context.route.path === 'users/create' || _context.route.path === '/users/create/') {
+  if (_context.route.path === 'users/create' || _context.route.path === '/users/create/') {
     if (!_context.route.query.token) {
       return _context.redirect('/users/login')
     }
