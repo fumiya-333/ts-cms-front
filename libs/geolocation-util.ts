@@ -28,15 +28,21 @@ export const currentPositionError = (positionError: GeolocationPositionError) =>
 export const positionConvToAddress = async (position: GeolocationPosition) => {
   const geocoder = new google.maps.Geocoder()
   const latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
-  return await geocoder.geocode({
-    location: latlng
-  }, execPositionConvToAddress)
+  return await geocoder.geocode(
+    {
+      location: latlng,
+    },
+    execPositionConvToAddress
+  )
 }
 
-export const execPositionConvToAddress = (results: google.maps.GeocoderResult[] | null, status: google.maps.GeocoderStatus) => {
+export const execPositionConvToAddress = (
+  results: google.maps.GeocoderResult[] | null,
+  status: google.maps.GeocoderStatus
+) => {
   let ret = null
   if (status === google.maps.GeocoderStatus.OK) {
-    if(results){
+    if (results) {
       ret = results[0]
     }
   }
