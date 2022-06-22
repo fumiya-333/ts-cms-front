@@ -1,5 +1,5 @@
 <template>
-  <FormTemplate>
+  <MainTemplate>
     <Label class-name="u-d-block">{{ $t('form.name') }}</Label>
     <TextPlane
       class-name="u-d-block u-px2 u-py1 u-mt2 u-text-sz4"
@@ -53,12 +53,12 @@
         :class-name="`u-top70 ${$device.isMobile ? 'u-ml2 u-left' : 'u-right-percent5'}`"
       ></AlertDanger>
     </portal>
-  </FormTemplate>
+  </MainTemplate>
 </template>
 
 <script>
 import { required, email, sameAs } from 'vuelidate/lib/validators'
-import FormTemplate from '@/components/templates/FormTemplate'
+import MainTemplate from '@/components/templates/MainTemplate'
 import Label from '@/components/atoms/Label'
 import TextPlane from '@/components/atoms/TextPlane'
 import TextEmail from '@/components/atoms/TextEmail'
@@ -67,7 +67,7 @@ import AlertInfo from '@/components/molecules/dialogs/AlertInfo'
 import AlertDanger from '@/components/molecules/dialogs/AlertDanger'
 
 export default {
-  components: { FormTemplate, Label, TextPlane, TextEmail, BtnWarning, AlertInfo, AlertDanger },
+  components: { MainTemplate, Label, TextPlane, TextEmail, BtnWarning, AlertInfo, AlertDanger },
   data() {
     return {
       form: {

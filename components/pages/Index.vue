@@ -1,13 +1,13 @@
 <template>
-  <FormTemplate> </FormTemplate>
+  <MainTemplate> </MainTemplate>
 </template>
 
 <script>
-import FormTemplate from '@/components/templates/FormTemplate'
+import MainTemplate from '@/components/templates/MainTemplate'
 
 export default {
   components: {
-    FormTemplate,
+    MainTemplate,
   },
   data() {
     return {}

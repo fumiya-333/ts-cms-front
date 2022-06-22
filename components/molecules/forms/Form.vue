@@ -1,5 +1,5 @@
 <template>
-  <form class="u-fadein" :class="className">
+  <form ref="form" class="u-fadein" :action="actionName" :class="className">
     <div :class="classNameInner">
       <slot></slot>
     </div>
@@ -9,6 +9,10 @@
 <script>
 export default {
   props: {
+    actionName: {
+      type: String,
+      default: '',
+    },
     className: {
       type: String,
       default: '',
@@ -16,6 +20,11 @@ export default {
     classNameInner: {
       type: String,
       default: '',
+    },
+  },
+  methods: {
+    submit() {
+      this.$refs.form.submit()
     },
   },
 }
