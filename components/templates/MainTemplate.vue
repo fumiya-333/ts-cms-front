@@ -1,8 +1,8 @@
 <template>
   <Wrapper>
     <Header></Header>
-    <Contents class-name="u-w14 u-mx-auto">
-      <Main class-name="u-my10">
+    <Contents class-name="u-w280 u-mx-auto">
+      <Main class-name="u-my30">
         <slot></slot>
       </Main>
     </Contents>

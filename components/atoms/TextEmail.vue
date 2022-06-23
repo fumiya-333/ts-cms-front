@@ -1,7 +1,7 @@
 <template>
   <input
     type="email"
-    class="u-w100 u-border1 u-border-secondary u-rounded1 u-outline1 u-outline-secondary"
+    class="u-w-percent100 u-border1 u-border-secondary u-rounded1 u-outline1 u-outline-secondary"
     :name="name"
     :class="className"
     :value="value"

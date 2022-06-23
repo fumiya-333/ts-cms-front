@@ -1,6 +1,6 @@
 <template>
   <Alert ref="alert" class-name="u-bg-primary u-text-white" :class="className">
-    <span class="u-d-inline-block u-w100">{{ msg }}</span>
+    <span class="u-d-inline-block u-w-percent100">{{ msg }}</span>
   </Alert>
 </template>
 

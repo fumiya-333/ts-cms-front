@@ -2,20 +2,20 @@
   <MainTemplate>
     <Label class-name="u-d-block">{{ $t('form.email') }}</Label>
     <TextEmail
-      class-name="u-d-block u-px2 u-py1 u-mt2 u-text-sz4"
+      class-name="u-d-block u-px8 u-py4 u-mt8 u-text-sz4"
       name="email"
       :value="$v.form.email.$model"
       placeholder="example@example.com"
       @input="$v.form.email.$model = $event"
     ></TextEmail>
-    <div v-if="$v.form.email.$error && !$v.form.email.required" class="u-mt2 u-text-danger">
+    <div v-if="$v.form.email.$error && !$v.form.email.required" class="u-mt8 u-text-danger">
       {{ $t('form.email') }}{{ $t('error.required') }}
     </div>
-    <div v-if="$v.form.email.$error && !$v.form.email.email" class="u-mt2 u-text-danger">{{ $t('error.email') }}</div>
-    <div class="u-mt10">
+    <div v-if="$v.form.email.$error && !$v.form.email.email" class="u-mt8 u-text-danger">{{ $t('error.email') }}</div>
+    <div class="u-mt20">
       <BtnWarning
         name="passwordResetPre"
-        class-name="u-d-block u-w5 u-h1 u-mx-auto u-align-center u-text-sz4"
+        class-name="u-d-block u-w100 u-h20 u-mx-auto u-align-center u-text-sz4"
         @click="passwordResetPre"
         >パスワード変更</BtnWarning
       >
@@ -23,11 +23,11 @@
     <portal to="target">
       <AlertInfo
         ref="alertInfo"
-        :class-name="`u-top70 ${$device.isMobile ? 'u-ml2 u-left' : 'u-right-percent5'}`"
+        :class-name="`u-top70 ${$device.isMobile ? 'u-ml16 u-left' : 'u-right-percent5'}`"
       ></AlertInfo>
       <AlertDanger
         ref="alertDanger"
-        :class-name="`u-top70 ${$device.isMobile ? 'u-ml2 u-left' : 'u-right-percent5'}`"
+        :class-name="`u-top70 ${$device.isMobile ? 'u-ml16 u-left' : 'u-right-percent5'}`"
       ></AlertDanger>
     </portal>
   </MainTemplate>

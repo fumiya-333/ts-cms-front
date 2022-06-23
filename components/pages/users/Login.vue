@@ -3,43 +3,43 @@
     <Form ref="form" action-name="/" method-name="post" class-name-inner="u-position-relative">
       <Label class-name="u-d-block">{{ $t('form.email') }}</Label>
       <TextEmail
-        class-name="u-d-block u-px2 u-py1 u-mt2 u-text-sz4"
+        class-name="u-d-block u-px8 u-py4 u-mt8 u-text-sz4"
         name="email"
         :value="$v.form.email.$model"
         placeholder="example@example.com"
         @input="$v.form.email.$model = $event"
       ></TextEmail>
-      <div v-if="$v.form.email.$error && !$v.form.email.required" class="u-mt2 u-text-danger">
+      <div v-if="$v.form.email.$error && !$v.form.email.required" class="u-mt8 u-text-danger">
         {{ $t('form.email') }}{{ $t('error.required') }}
       </div>
-      <div v-if="$v.form.email.$error && !$v.form.email.email" class="u-mt2 u-text-danger">{{ $t('error.email') }}</div>
-      <Label class-name="u-d-block u-mt3">{{ $t('form.password') }}</Label>
+      <div v-if="$v.form.email.$error && !$v.form.email.email" class="u-mt8 u-text-danger">{{ $t('error.email') }}</div>
+      <Label class-name="u-d-block u-mt12">{{ $t('form.password') }}</Label>
       <TextPassword
-        class-name="u-d-block u-px2 u-py1 u-mt2 u-text-sz4"
+        class-name="u-d-block u-px8 u-py4 u-mt8 u-text-sz4"
         name="password"
         :value="$v.form.password.$model"
         @input="$v.form.password.$model = $event"
       ></TextPassword>
-      <div v-if="$v.form.password.$error && !$v.form.password.required" class="u-mt2 u-text-danger">
+      <div v-if="$v.form.password.$error && !$v.form.password.required" class="u-mt8 u-text-danger">
         {{ $t('form.password') }}{{ $t('error.required') }}
       </div>
-      <Link href="passwordResetPre" class-name="u-flex-end u-mt3">パスワードを忘れた</Link>
-      <div class="u-mt10">
-        <BtnPrimary name="login" class-name="u-d-block u-w5 u-h1 u-mx-auto u-align-center u-text-sz4" @click="login"
+      <Link href="passwordResetPre" class-name="u-flex-end u-mt12">パスワードを忘れた</Link>
+      <div class="u-mt20">
+        <BtnPrimary name="login" class-name="u-d-block u-w100 u-h20 u-mx-auto u-align-center u-text-sz4" @click="login"
           >ログイン</BtnPrimary
         >
-        <LinkBtnWarning href-name="createPre" class-name="u-d-block u-w5 u-h1 u-mt2 u-mx-auto u-align-center u-text-sz4"
+        <LinkBtnWarning href-name="createPre" class-name="u-d-block u-w100 u-h20 u-mt8 u-mx-auto u-align-center u-text-sz4"
           >新規登録</LinkBtnWarning
         >
       </div>
       <portal to="target">
         <AlertInfo
           ref="alertInfo"
-          :class-name="`u-top70 ${$device.isMobile ? 'u-ml2 u-left' : 'u-right-percent5'}`"
+          :class-name="`u-top70 ${$device.isMobile ? 'u-ml16 u-left' : 'u-right-percent5'}`"
         ></AlertInfo>
         <AlertDanger
           ref="alertDanger"
-          :class-name="`u-top70 ${$device.isMobile ? 'u-ml2 u-left' : 'u-right-percent5'}`"
+          :class-name="`u-top70 ${$device.isMobile ? 'u-ml16 u-left' : 'u-right-percent5'}`"
         ></AlertDanger>
       </portal>
     </Form>

@@ -1,0 +1,76 @@
+.u-mx-auto {
+  margin: 0 auto;
+}
+
+.u-my-auto {
+  margin: auto 0;
+}
+
+.u-m-auto {
+  margin: auto;
+}
+
+.u-mt-auto {
+  margin-top: auto;
+}
+
+.u-mr-auto {
+  margin-right: auto;
+}
+
+.u-mb-auto {
+  margin-bottom: auto;
+}
+
+.u-ml-auto {
+  margin-left: auto;
+}
+
+@for $i from 0 through 400 {
+  .u-pt#{$i} {
+    padding-top: #{$i * 2}px;
+  }
+  .u-pb#{$i} {
+    padding-bottom: #{$i * 2}px;
+  }
+  .u-pl#{$i} {
+    padding-left: #{$i * 2}px;
+  }
+  .u-pr#{$i} {
+    padding-right: #{$i * 2}px;
+  }
+  .u-px#{$i} {
+    padding-right: #{$i * 2}px;
+    padding-left: #{$i * 2}px;
+  }
+  .u-py#{$i} {
+    padding-top: #{$i * 2}px;
+    padding-bottom: #{$i * 2}px;
+  }
+  .u-p#{$i} {
+    padding: #{$i * 2}px;
+  }
+  .u-mt#{$i} {
+    margin-top: #{$i * 2}px;
+  }
+  .u-mb#{$i} {
+    margin-bottom: #{$i * 2}px;
+  }
+  .u-ml#{$i} {
+    margin-left: #{$i * 2}px;
+  }
+  .u-mr#{$i} {
+    margin-right: #{$i * 2}px;
+  }
+  .u-mx#{$i} {
+    margin-right: #{$i * 2}px;
+    margin-left: #{$i * 2}px;
+  }
+  .u-my#{$i} {
+    margin-top: #{$i * 2}px;
+    margin-bottom: #{$i * 2}px;
+  }
+  .u-m#{$i} {
+    margin: #{$i * 2}px;
+  }
+}

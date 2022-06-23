@@ -1,36 +1,36 @@
 <template>
   <MainTemplate>
-    <Label class-name="u-d-block u-mt3">{{ $t('form.name') }}</Label>
-    <Label class-name="u-d-block u-ml2 u-mt2">{{ form.name }}</Label>
-    <Label class-name="u-d-block u-mt3">{{ $t('form.email') }}</Label>
-    <Label class-name="u-d-block u-ml2 u-mt2">{{ form.email }}</Label>
-    <Label class-name="u-d-block u-mt3">{{ $t('form.password') }}</Label>
+    <Label class-name="u-d-block u-mt12">{{ $t('form.name') }}</Label>
+    <Label class-name="u-d-block u-ml16 u-mt8">{{ form.name }}</Label>
+    <Label class-name="u-d-block u-mt12">{{ $t('form.email') }}</Label>
+    <Label class-name="u-d-block u-ml16 u-mt8">{{ form.email }}</Label>
+    <Label class-name="u-d-block u-mt12">{{ $t('form.password') }}</Label>
     <TextPassword
-      class-name="u-d-block u-px2 u-py1 u-mt2 u-text-sz4"
+      class-name="u-d-block u-px8 u-py4 u-mt8 u-text-sz4"
       name="password"
       :value="$v.form.password.$model"
       @input="$v.form.password.$model = $event"
     ></TextPassword>
-    <div v-if="$v.form.password.$error && !$v.form.password.required" class="u-mt2 u-text-danger">
+    <div v-if="$v.form.password.$error && !$v.form.password.required" class="u-mt8 u-text-danger">
       {{ $t('form.password') }}{{ $t('error.required') }}
     </div>
-    <Label class-name="u-d-block u-mt3">{{ $t('form.passwordConfirm') }}</Label>
+    <Label class-name="u-d-block u-mt12">{{ $t('form.passwordConfirm') }}</Label>
     <TextPassword
-      class-name="u-d-block u-px2 u-py1 u-mt2 u-text-sz4"
+      class-name="u-d-block u-px8 u-py4 u-mt8 u-text-sz4"
       name="passwordConfirm"
       :value="$v.form.passwordConfirm.$model"
       @input="$v.form.passwordConfirm.$model = $event"
     ></TextPassword>
-    <div v-if="$v.form.passwordConfirm.$error && !$v.form.passwordConfirm.required" class="u-mt2 u-text-danger">
+    <div v-if="$v.form.passwordConfirm.$error && !$v.form.passwordConfirm.required" class="u-mt8 u-text-danger">
       {{ $t('form.passwordConfirm') }}{{ $t('error.required') }}
     </div>
-    <div v-if="$v.form.passwordConfirm.$error && !$v.form.passwordConfirm.sameAsPassword" class="u-mt2 u-text-danger">
+    <div v-if="$v.form.passwordConfirm.$error && !$v.form.passwordConfirm.sameAsPassword" class="u-mt8 u-text-danger">
       {{ $t('form.password') }}と{{ $t('form.passwordConfirm') }}{{ $t('error.sameAs') }}
     </div>
-    <div class="u-mt10">
+    <div class="u-mt20">
       <BtnWarning
         name="createPre"
-        class-name="u-d-block u-w5 u-h1 u-mx-auto u-align-center u-text-sz4"
+        class-name="u-d-block u-w100 u-h20 u-mx-auto u-align-center u-text-sz4"
         @click="createPre"
         >新規登録</BtnWarning
       >
@@ -38,11 +38,11 @@
     <portal to="target">
       <AlertInfo
         ref="alertInfo"
-        :class-name="`u-top70 ${$device.isMobile ? 'u-ml2 u-left' : 'u-right-percent5'}`"
+        :class-name="`u-top70 ${$device.isMobile ? 'u-ml16 u-left' : 'u-right-percent5'}`"
       ></AlertInfo>
       <AlertDanger
         ref="alertDanger"
-        :class-name="`u-top70 ${$device.isMobile ? 'u-ml2 u-left' : 'u-right-percent5'}`"
+        :class-name="`u-top70 ${$device.isMobile ? 'u-ml16 u-left' : 'u-right-percent5'}`"
       ></AlertDanger>
     </portal>
   </MainTemplate>

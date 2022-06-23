@@ -1,8 +1,0 @@
-@for $i from 0 through 50 {
-  .u-h#{$i} {
-    height: #{$i * 40}px;
-  }
-  .u-max-h#{$i} {
-    max-height: #{$i * 40}px;
-  }
-}

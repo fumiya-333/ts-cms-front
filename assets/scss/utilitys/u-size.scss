@@ -1,0 +1,19 @@
+@for $i from 0 through 1000 {
+  .u-w#{$i} {
+    width: #{$i * 2}px;
+    max-width: 100%;
+  }
+  .u-max-w#{$i} {
+    max-width: #{$i * 2}px;
+  }
+  .u-h#{$i} {
+    height: #{$i * 2}px;
+  }
+  .u-max-h#{$i} {
+    max-height: #{$i * 2}px;
+  }
+}
+
+.u-w-percent100 {
+  width: 100%;
+}

@@ -2,7 +2,7 @@
   <input
     :type="type"
     :name="name"
-    class="u-w100 u-border1 u-border-secondary u-rounded1 u-outline1 u-outline-secondary"
+    class="u-w-percent100 u-border1 u-border-secondary u-rounded1 u-outline1 u-outline-secondary"
     :class="className"
     :value="value"
     @input="$emit('input', $event.target.value)"
