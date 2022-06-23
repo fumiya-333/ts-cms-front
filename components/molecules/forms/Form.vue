@@ -1,5 +1,5 @@
 <template>
-  <form ref="form" class="u-fadein" :action="actionName" :class="className">
+  <form ref="form" class="u-fadein" :action="actionName" :method="methodName" :class="className">
     <div :class="classNameInner">
       <slot></slot>
     </div>
@@ -10,6 +10,10 @@
 export default {
   props: {
     actionName: {
+      type: String,
+      default: '',
+    },
+    methodName: {
       type: String,
       default: '',
     },

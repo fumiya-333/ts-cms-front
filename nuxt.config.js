@@ -26,14 +26,7 @@ export default {
   css: [{ src: '@/assets/scss/style.scss' }],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    '@/libs/date-util',
-    '@/libs/api-util',
-    '@/libs/vuelidate',
-    '@/libs/portal-vue',
-    '@/libs/cookie-util',
-    '@/libs/geolocation-util',
-  ],
+  plugins: ['@/libs/date-util', '@/libs/api-util', '@/libs/vuelidate', '@/libs/portal-vue', '@/libs/geolocation-util'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -67,6 +60,7 @@ export default {
         lazy: true,
       },
     ],
+    'cookie-universal-nuxt',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

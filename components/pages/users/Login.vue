@@ -1,6 +1,6 @@
 <template>
   <MainTemplate>
-    <Form ref="form" action-name="/" class-name-inner="u-position-relative">
+    <Form ref="form" action-name="/" method-name="post" class-name-inner="u-position-relative">
       <Label class-name="u-d-block">{{ $t('form.email') }}</Label>
       <TextEmail
         class-name="u-d-block u-px2 u-py1 u-mt2 u-text-sz4"
@@ -107,11 +107,9 @@ export default {
         const users = this.$store.state.users.users
         if (users && users.success && typeof users.response !== 'undefined') {
           if (users.success) {
-            if (this.$isCookie()) {
-              const now = this.$getAddHoursNow(1)
-              this.$setCookie('token', users.response.token, now)
-              this.$refs.form.submit()
-            }
+            const now = this.$getAddHoursNow(1)
+            this.$cookies.set('token', users.response.token, { path: '/', maxAge: now })
+            this.$router.push('/')
           } else {
             this.alertDangerShow(users.response.msg)
           }

@@ -1,7 +1,10 @@
 import { Middleware, Context } from '@nuxt/types'
 
+export const LOGIN_ROUTER = ['/']
+
 const router: Middleware = async (_context: Context) => {
-  if (_context.route.path === 'users/create' || _context.route.path === '/users/create/') {
+  // ユーザー登録画面リダイレクト処理
+  if (isRouter(_context.route.path, '/users/create')) {
     if (!_context.route.query.token) {
       return _context.redirect('/users/login')
     }
@@ -11,7 +14,8 @@ const router: Middleware = async (_context: Context) => {
       return _context.redirect('/users/login')
     }
   }
-  if (_context.route.path === 'users/passwordReset' || _context.route.path === '/users/passwordReset/') {
+  // パスワードリセット画面リダイレクト処理
+  if (isRouter(_context.route.path, '/users/passwordReset')) {
     if (!_context.route.query.token) {
       return _context.redirect('/users/login')
     }
@@ -21,6 +25,21 @@ const router: Middleware = async (_context: Context) => {
       return _context.redirect('/users/login')
     }
   }
+
+  const token = _context.app.$cookies.get('token')
+  if (LOGIN_ROUTER.find((el) => isRouter(_context.route.path, el))) {
+    // ログイン前リダイレクト処理
+    if (!token || typeof token === 'undefined') {
+      return _context.redirect('/users/login')
+    }
+  } else if (token) {
+    // ログイン後リダイレクト処理
+    return _context.redirect('/')
+  }
+}
+
+export const isRouter = (path: string, router: string) => {
+  return path === router || path === `${router}/`
 }
 
 export default router
